@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Clase 01</title>
+</head>
+<body>
+    <!-- 1 -->
+    <script>
+        console.log("Hola mundo");
+        console.log("Cristian");
+    </script>
+    
+    <!-- 2 -->
+    <script>
+        let nombreDelUsuario1 = prompt("Ingrese su nombre");
+        console.log("Su nombre es: ", nombreDelUsuario1);
+
+        let edadDelUsuario1 = prompt("Ingrese su edad");
+        console.log("Su edad es: ", edadDelUsuario1, " años");
+    </script>
+
+    <!-- 3 -->
+    <script>
+        alert("Bienvenido");
+        
+        let comidaFavorita = prompt("Cual es su comida favorita?");
+        alert("Su comida favorita es: " + comidaFavorita);
+    </script>
+
+    <!-- 4 -->
+    <script>
+        let nombreDelUsuario2 = prompt("Ingrese su nombre");
+        let edadDelUsuario2 = prompt("Ingrese su edad");
+        alert("Bienvenido " + nombreDelUsuario2 + ", usted tiene " + edadDelUsuario2 + " años?");
+        
+        let nacimiento = 2024 - edadDelUsuario2;
+        console.log("Su año de nacimineto es: " + nacimiento);
+        
+        if (edadDelUsuario2 > 17) {
+            console.log("Usted es mayor de edad");
+        } else {
+            console.log("Usted es menor de edad");
+        }
+    </script>
+</body>
+</html>
