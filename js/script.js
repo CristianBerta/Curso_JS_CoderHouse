@@ -1,117 +1,166 @@
-let unNumero;
+/*let a;
+a = 0;
+console.log(a)
+a = a + 1;
+console.log(a)
+a = a + 1;
+console.log(a)
+a = a + 1;
+console.log(a)
 
-unNumero = 10;
+for (let i = 0;  i < 10;  i = i + 1)
+    {
+        console.log(i + " usando i = i + 1");
+    }
 
-unNumero = 12;
+//1er vuelta:
+i = 0
+console.log(i) = 0
 
-/* Muestra un mensaje de alerta que indique si el usuario es 
-menor de edad o mayor de edad, dependiendo de su 
-edad ingresada */
+//2da vuelta:
+i = 1
+console.log(i) = 1
 
-// let edadIngresada = prompt("Ingrese su Edad: ");
+//9na vuelta:
+i = 9
+console.log(i) = 9*/
 
-// if (edadIngresada >= 18) //Condicion correcta para Mayor de edad
-//     {
-//         alert("Su edad es de: " + edadIngresada + " Años, entonces es Mayor de Edad");
-//     }
-// else if (edadIngresada > 0 && edadIngresada < 18) //La edad tiene que ser mayor a 0 Y menor a 18
-//     {
-//         alert("Su edad es de: " + edadIngresada + " Años, entonces es Menor de Edad");
-//     } 
-// else if(edadIngresada <= 0) // Para edad Menor o Igual a 0
-//     {
-//         alert("La Edad ingresada debe ser Mayor a 0 !!");
-//     } 
-// else
-//     {
-//         alert("La Edad ingresada es Incorrecta!!!");
-//     }
+/*---------------------------------------------------------------------------*/
 
-/*------------------------------------------------------------------------------------*/
+/*i = i + 1 //es lo mismo que decir i++
 
-let unaVariable = -1;
+for(let i = 1;  i <= 10;  i++)
+    {
+        console.log(i + " usando i++");
+    }
 
-unaVariable = 2;
+let ingreseSuNombre = prompt("Ingrese su Nombre");
 
-//Valores Booleanos (Son true o false)
+//Usando break
+for (let i = 0; i < 15; i++)
+    {
+        if (i == 5)
+            {
+                break;
+            }
+        console.log("El nombre ingresado es: " + ingreseSuNombre + " " + i);
+    }
 
-console.log(unaVariable > 0) // La condicion es true o false
+// Usando continue
+for (let i = 0; i < 10; i++)
+    {
+        if (i == 5)
+            {
+                continue;
+            }
+        console.log("El nombre ingresado es: " + ingreseSuNombre + " " + i);
+    }
 
-/*
-    if (condicion) Si la condicion es true "Verdadera"
-        { 
-            <<<<< Ejecuto esto >>>>>
-        }
-        Sino ejecuto esto: (Que puede ser otra condicion o un else)
-        else 
-        {
-            <<<<< Ejecuto esto >>>>>
-        }
+let nombre = "Alejandro";
+console.log(nombre.length);
+for(let i = 1; i <= nombre.length ; i++)
+    {
+        console.log("Su nombre es: " + nombre + " iteracion Nro: " + i);
+    }*/
 
-*/
+/*-------------------------------------------------------------------------------------*/
+
+/*//Ciclo While
+let i = 0; // Es una Variable Global
+while(i < 5)
+    {
+        console.log("Imprimiendo desde el While " + i);
+        i++;
+    }
+
+// Ciclo do While
+do
+{
+    console.log("Imprimiendo desde el do While " + i);
+    i++;
+}
+while(i <= 7);*/
 
 /*-----------------------------------------------------------------------------*/
 
-//Tablas de Verdad
+/*let a = 1; // Formato numerico
+let b = "1"; // Formato String
 
-// const V = true;
-// const F = false;
+let suma = a + b; // Da como resultado 11
+console.log(suma); // La operacion + Concatena
 
-// console.log("Tablas de Verdad del Operador && (Y)");
-// console.log(V && V);
-// console.log(V && F);
-// console.log(F && V);
-// console.log(F && F);
+let sumaParceada = parseInt(a) + parseInt(b); // Da como resultado 2
+console.log(sumaParceada);  // La operacion + Suma
 
-// console.log("Tablas de Verdad del Operador || (O)");
-// console.log(V || V);
-// console.log(V || F);
-// console.log(F || V);
-// console.log(F || F);
+let ingreseUnNumeroA = prompt("Ingrese el 1er Numero");
+let ingreseUnNumeroB = prompt("Ingrese el 2do Numero");
+let resultado = parseInt(ingreseUnNumeroA) + parseInt(ingreseUnNumeroB);
+let resultadoFloat = parseFloat(ingreseUnNumeroA) + parseFloat(ingreseUnNumeroB);
+console.log(resultado);
+console.log(resultadoFloat);*/
 
-// console.log("Tablas de Verdad de la Negacion !");
-// console.log(!V + " La negacion de la Verdad");
-// console.log(!F + " la negacion de la Falsedad");
+/*-------------------------------------------------------------------------------------*/
 
-/*---------------------------------------------------------------------*/
+// Switch
+/*Muestra un mensaje de alerta que indique si el usuario es 
+menor de edad o mayor de edad, dependiendo de su edad ingresada.
+*/
 
-let ingreseSuNombre = prompt("Ingrese su Nombre:"); // Variable Global
-let ingreseSuApellido = prompt("Ingrese su Apellido:");
-const VACIO = ""; // Esta constante esta Vacia
+/*let edadIngresada = prompt("Ingrese su Edad: ");
 
-
-// if (ingreseSuNombre != VACIO && ingreseSuApellido != VACIO)
-//     {
-//         let ingreseSuEdad = prompt("Ingrese su Edad:");
-//         if(ingreseSuEdad != VACIO)
-//             {
-//                 alert("Su nombre es: " + ingreseSuNombre + " " + ingreseSuApellido + " y tiene " + ingreseSuEdad + " Años de Edad");
-//             }
-//         else
-//             {
-//                 alert("Su nombre es: " + ingreseSuNombre + " " + ingreseSuApellido);
-//             }
-//     }
-// else{
-//     alert("Falta ingresar Informacion");
-//     }
-
-// console.log(ingreseSuNombre != VACIO && ingreseSuApellido != VACIO) //Si no ingreso alguno de los datos requeridos me sale false
-
-if (ingreseSuNombre != VACIO || ingreseSuApellido != VACIO)
+if (edadIngresada >= 18) //Condicion correcta para Mayor de edad
     {
-        let ingreseSuEdad = prompt("Ingrese su Edad:");
-        if(ingreseSuEdad != VACIO)
-            {
-                alert("Su nombre es: " + ingreseSuNombre + " " + ingreseSuApellido + " y tiene " + ingreseSuEdad + " Años de Edad");
-            }
-        else{
-                alert("Su nombre es: " + ingreseSuNombre + " " + ingreseSuApellido);
-            }
+        alert("Su edad es de: " + edadIngresada + " Años, entonces es Mayor de Edad");
+    }
+else if (edadIngresada > 0 && edadIngresada < 18) //Condicion correcta para Mayor de edad
+    {
+        alert("Su edad es de: " + edadIngresada + " Años, entonces es Menor de Edad");
+    }
+else if(edadIngresada <= 0) // Para edad Menor o Igual a 0
+    {
+        alert("La Edad ingresada debe ser Mayor a 0 !!");
     }
 else{
-        alert("Falta ingresar Toda la Informacion");
-    }
+        alert("La Edad ingresada es Incorrecta!!!");
+    }*/
 
-console.log(ingreseSuNombre != VACIO || ingreseSuApellido != VACIO) //Si  ingreso almenos uno de los datos requeridos me sale true
-console.log(ingreseSuEdad); //Variable Local
+// Ahora lo vamos a resolver usando un Switch
+let edadIngresada;
+do
+{
+    edadIngresada = prompt("Ingrese su Edad o escriba 'ESC' para salir: ");
+    if (edadIngresada !== "ESC")
+        {
+            edadIngresada = parseInt(edadIngresada); // Convertimos a número entero
+            switch (edadIngresada)
+            {
+                case 18:
+                    console.log("Su edad es de: " + edadIngresada + " años, entonces es Mayor de Edad");
+                    break;
+                case 17:
+                    console.log("Su edad es de: " + edadIngresada + " años, entonces es Menor de Edad");
+                    break;
+                case 0:
+                    console.log("La Edad ingresada debe ser Mayor a 0 !!");
+                    break;
+                default:
+                    console.log("La Edad ingresada es Incorrecta!!!");
+                    break;
+            }
+        }
+}
+while (edadIngresada !== "ESC");
+
+let numero = parseInt(prompt("Ingrese un numero"));
+switch(numero)
+{
+    case  1:
+        console.log("El numero es Uno");
+        break;
+    case  2:
+        console.log("El numero es Dos");
+        break;
+    default:
+        console.log("El numero no es ni Uno ni Dos, es: " + numero);
+        break;
+}
