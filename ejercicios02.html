@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Clase 01</title>
+</head>
+<body>
+    <!-- Variables y constante -->
+    <script>
+        let nombre = "Cristian"; //1
+        const PI = 3.14; //2
+    </script>
+    
+    <!-- Booleanos -->
+    <script>
+        let esMAyorDeEdad = true; //3
+    </script>
+
+    <!-- Prompt, Alert y Console -->
+    <script>
+        let edadUsuario = prompt("Ingrese su edad:"); //4
+        alert("Hola"); //5
+        console.log("La edad ingresada es: " + edadUsuario); //6
+    </script>
+
+    <!-- Control de Flujo con if y if else -->
+    <script>
+        //7
+        if (edadUsuario > 0) {
+            alert("Su numero es positivo");
+        }
+        else if (edadUsuario < 0) {
+            alert("Su numero es negativo");
+        }
+        else{
+            alert("Su numero es cero");
+        }
+        
+        //8
+        if (edadUsuario % 2 === 0) {
+            alert("Su numero es par");
+        } else {
+            alert("Su nuemro es impar");
+        }
+
+        //9
+        if (edadUsuario > 100) {
+            alert("Su numero es mayor que 100");
+        }
+        else if (edadUsuario < 100) {
+            alert("Su numero es menor que 100");
+        }
+        else{
+            alert("Su numero es 100");
+        }
+    </script>
+
+    <!-- Operadores Logicos -->
+    <script>
+        //10
+        if (edadUsuario % 2 === 0 && edadUsuario % 3 === 0) {
+            alert("Su numero es divisible por 2 y por 3");
+        } else {
+            alert("Su numero no es divisible por 2 y por 3");
+        }
+
+        //11
+        if (edadUsuario > 0 && edadUsuario < 100) {
+            alert("Su numero esta entre 0 y 100");
+        } else {
+            alert("Su numero no esta entre 0 y 100");
+        }
+
+        //12
+        if (edadUsuario > 10 || edadUsuario < -10) {
+            alert("Su numero es mayor que 10 o menor que -10");
+        } else {
+            alert("Su numero no es mayor que 10 o menor que -10");
+        }
+    </script>
+
+    <!-- Ejercicios Adicionales -->
+    <script>
+        //13
+        let numero = prompt("Ingrese un numero:");
+        if (numero <= 1) {
+            alert("Su numero no es primo");
+        }
+        else
+        {
+            for (let i = 2; i < numero; i++)
+            {
+                if (numero % i === 0)
+                {
+                    alert("Su numero no es primo");
+                    break;
+                }
+                else{
+                    alert("Su numero es primo");
+                    break;
+                }
+            }
+        }
+
+        //14
+        let hora = prompt("Ingrese una hora");
+        if (hora >= 22 || hora >= 0 && hora < 6) {
+            alert("Su hora es de noche");
+        }
+        else if (hora >= 6 && hora < 12) {
+            alert("Su hora es de mañana");
+        }
+        else if (hora >= 12 && hora < 22){
+            alert("Su hora es de tarde");
+        }
+
+        //15
+        let primerNumero = prompt("Ingrese el primer numero");
+        let segundoNumero = prompt("Ingrese el segundo numero");
+        if (primerNumero % segundoNumero === 0) {
+            alert("Su primer numero es divisible por el segundo");
+        } else {
+            alert("Su primer numero no es divisible por el segundo");
+        }
+
+        //16
+        let nombreUsuario = "Cristian";
+        if (nombreUsuario.length > 6) {
+            alert("Su nombre tiene mas de 6 caracteres");
+        } else {
+            alert("Su nombre tiene menos de 6 caracteres");
+        }
+
+        //17
+        let anio
+    </script>
+</body>
+</html>
