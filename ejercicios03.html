@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Clase 01</title>
+</head>
+<body>
+    <!-- Control de Flujo con if y if else y operadores logicos -->
+    <script>
+        //1
+        // let edad = prompt("Ingrese su edad");
+        // if (edad >= 18) {
+        //     console.log("Usted es mayor de edad");
+        // } else {
+        //     console.log("Usted es menor de edad");
+        // }
+
+        //2
+        // if (edad > 0 && edad % 2 === 0) {
+        //     alert("Su numero es positivo y par");
+        // } else {
+        //     alert("Su numero no es positivo ni par");
+        // }
+
+        // //3
+        // let primeroNumero = prompt("Ingrese el primer numero");
+        // let segundoNumero = prompt("Ingrese el segundo numero");
+        // if (primeroNumero > segundoNumero) {
+        //     alert("El primer numero es mayor que el segundo");
+        // }
+        // else if (primeroNumero < segundoNumero) {
+        //     alert("El primer numero es menor que el segundo");
+        // }
+        // else{
+        //     alert("Los numeros son iguales");
+        // }
+    </script>
+    
+    <!-- Ciclos e iteraciones usando for, while y do while -->
+    <script>
+        //4
+        // for (let i = 1; i <= 10; i++) {
+        //     console.log(i);
+        // }
+
+        // //5
+        // let num = prompt("Ingrese un numero");
+        // let a = 1;
+        // while (a <= num) {
+        //     console.log(a);
+        //     a++;
+        // }
+
+        // //6
+        // let i = 10;
+        // do {
+        //     console.log(i);
+        //     i--;
+        // } while (i > 0);
+    </script>
+
+    <!-- Control de Flujo con if y if else y operadores logicos -->
+    <script>
+        //7
+        // let tempMax = 40;
+        // let tempUsuario = prompt("Ingrese la temperatura");
+        // if (tempUsuario > tempMax) {
+        //     console.log("La temperatura supera el maximo");
+        // } else {
+        //     console.log("la temperatura es de " + tempUsuario);
+        // }
+
+        // //8
+        // let edadUsuario = prompt("Igrese su edad");
+        // if (edadUsuario >= 13 && edadUsuario <= 19) {
+        //     console.log("Usted es un adolescente");
+        // } else if (edadUsuario > 19) {
+        //     console.log("Usted es un adulto");
+        // }
+        // else {
+        //     console.log("Usted es un niño");
+        // }
+    </script>
+
+    <!-- Ciclos e iteraciones usando for, while y do while -->
+    <script>
+        //9
+        // for (let i = 1; i <= 20; i++) {
+        //     console.log(i);
+        // }
+
+        //10
+        // let n = prompt("Ingrese un numero");
+        // while (n >= 1) {
+        //     console.log(n);
+        //     n--;
+        // }
+
+        //11
+        // let e = 1;
+        // do {
+        //     console.log(e * 5);
+        //     e++;
+        // } while (e <= 10);
+    </script>
+
+    <!-- Control de Flujo con if y if else y operadores logicos -->
+    <script>
+        //12
+        // let num1 = prompt("Ingrese un numero");
+        // let num2 = prompt("Ingrese otro numero");
+        // if (num1 > num2) {
+        //     console.log("El " + num1 + " es mayor");
+        // } else {
+        //     console.log("El " + num2 + " es mayor");
+        // }
+
+        //13
+        // let primerNum = prompt("Ingrese un numero");
+        // let segundoNum = prompt("Ingrese otro numero");
+        // let tercerNum = prompt("Ingrese otro numero")
+        // if (primerNum > segundoNum && primerNum > tercerNum) {
+        //     console.log("El " + primerNum + " es mayor");
+        // } else if (segundoNum > tercerNum) {
+        //     console.log("El " + segundoNum + " es mayor");
+        // } else {
+        //     console.log("El " + tercerNum + " es mayor");
+        // }
+    </script>
+
+    <!-- Ciclos e Iteraciones usando for, while y do while -->
+    <script>
+        //14
+        // for (let i = 1; i <= 100; i++) {
+        //     if (i % 3 === 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+        //15
+        // let num = prompt("Ingrese un numero");
+        // let doble = num * 2;
+        // while (num <= doble) {
+        //     console.log(num);
+        //     num++;
+        // }
+
+        //16
+        // let e = 1;
+        // do {
+        //     if (e % 2 != 0) {
+        //         console.log(e);
+        //     }
+        //     e++;
+        // } while (e <= 25);
+    </script>
+
+    <!-- Control de Flujo con switch -->
+    <script>
+        //17
+        let dia = prompt("Ingrese un dia de la semana");
+        switch (dia) {
+            case "sabado":
+                console.log("Es un dia no laboral");
+                break;
+            case "domingo":
+                console.log("Es un dia no laboral");
+                break;
+            default:
+                console.log("Es un dia laboral");
+                break;
+        }
+
+        //18
+        let num = parseInt(prompt("Ingrese un numero del 1 al 7"));
+        switch (num) {
+            case 2:
+                console.log("Lunes");
+                break;
+            case 3:
+                console.log("Martes");
+                break;
+            case 4:
+                console.log("Miercoles");
+                break;
+            case 5:
+                console.log("Jueves");
+                break;
+            case 6:
+                console.log("Viernes");
+                break;
+            case 1:
+                console.log("Domingo");
+                break;
+            default:
+                console.log("Sabado");
+                break;
+        }
+
+        //19
+        let mes = prompt("Ingrese un mes");
+        switch (mes) {
+            case "abril":
+            case "junio":
+            case "septiembre":
+            case "noviembre":
+                console.log("Cantidad de dias 30");
+                break;
+            case "febrero":
+                console.log("Cantidad de dias 28 o 29");
+                break;
+            default:
+                console.log("Cantidad de dias 31");
+                break;
+        }
+
+        //20
+        let numMes = parseInt(prompt("Ingrese un numero del 1 al 12"));
+        switch (num) {
+            case 2:
+                console.log("Febrero");
+                break;
+            case 3:
+                console.log("Marzo");
+                break;
+            case 4:
+                console.log("Abril");
+                break;
+            case 5:
+                console.log("Mayo");
+                break;
+            case 6:
+                console.log("Junio");
+                break;
+            case 7:
+                console.log("Julio");
+                break;
+            default:
+                console.log("Enero");
+                break;
+        }
+    </script>
+</body>
+</html>
