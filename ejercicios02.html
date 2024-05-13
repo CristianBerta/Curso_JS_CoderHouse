@@ -125,7 +125,7 @@
         }
 
         //16
-        let nombreUsuario = "Cristian";
+        let nombreUsuario = prompt("Ingrese su nombre");
         if (nombreUsuario.length > 6) {
             alert("Su nombre tiene mas de 6 caracteres");
         } else {
@@ -133,7 +133,46 @@
         }
 
         //17
-        let anio
+        let anio = prompt("Ingrese un año:");
+        if ((anio % 4 === 0 && anio % 100 !== 0) || anio % 400 === 0) {
+            alert("Es un año bisiesto");
+        } else {
+            alert("No es un año bisiesto");
+        }
+
+        //18
+        let nombreDelUsuario = prompt("Ingrese su nombre");
+        for (let i = 0; i < nombreDelUsuario.length; i++)
+        {
+            if (nombreDelUsuario[i] === "A" || nombreDelUsuario[i] === "a") {
+                alert("su nombre empieza con a");
+                break;
+            }
+            alert("Su nombre no empieza con a")
+        }
+
+        //19
+        let temperatura = prompt("Ingrese una temperatura");
+        if (temperatura >= 30 ) {
+            alert("Hace calor");
+        }
+        else if (temperatura >= 20 && temperatura < 30) {
+            alert("Esta templado");
+        }
+        else if (temperatura >= 0 && hora < 20){
+            alert("Su hora es de tarde");
+        }
+
+        //20
+        let numeroUno = prompt("Ingrese el primer numero");
+        let numeroDos = prompt("Ingrese el segundo numero");
+        let resultado = parseInt(numeroUno) + parseInt(numeroDos);
+        let numeroTres = prompt("Ingrese el tercer numero");
+        if (resultado == numeroTres) {
+            alert("la suma de los dos primeros numeros es igual al tercer numero");
+        } else {
+            alert("la suma de los dos primeros numeros no es igual al tercer numero");
+        }
     </script>
 </body>
 </html>
