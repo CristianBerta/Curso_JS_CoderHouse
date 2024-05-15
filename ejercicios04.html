@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 04</title>
+</head>
+<body>
+    <!-- Variables Locales y Globales -->
+    <script>
+        //1
+        // let mensaje = "Hola, mucho gusto";
+
+        // //2
+        // function saludar (mensaje) {
+        //     console.log(mensaje);
+        // }
+
+        // //3
+        // saludar(mensaje);
+    </script>
+
+    <!-- Funciones -->
+    <script>
+        //4
+        // function sumar(num1, num2) {
+        //     return num1 + num2;
+        // }
+
+        //5
+        // console.log(sumar(1, 5));
+    </script>
+
+    <!-- Funciones con Parametros -->
+    <script>
+        //6
+        // function multiplicador (num1, num2, num3) {
+        //     return num1 * num2 * num3;
+        // }
+
+        //7
+        // console.log(multiplicador(2, 5, 3));
+    </script>
+
+    <!-- Funciones Anonimas -->
+    <script>
+        //8
+        // const cuadrado = function (a) { return a * a};
+
+        //9
+        // console.log(cuadrado(8));
+    </script>
+
+    <!-- Funciones Flecha -->
+    <script>
+        //10
+        // const esPar = (a) => { 
+        //     if(a % 2 === 0) { 
+        //         return true; 
+        //     }
+        //     else { 
+        //         return false;
+        //     }
+        // }
+        
+        //11
+        // console.log(esPar(5));
+    </script>
+
+    <!-- Variables Locales y Globales -->
+    <script>
+        //12
+        //function prueba () {
+        //    let contador = 5;
+        //}
+
+        //13
+        //console.log(contador); //Al ser una variable local no se puede acceder
+    </script>
+
+    <!-- Funciones -->
+    <script>
+        //14
+        // function saludarNombre (nombre) {
+        //     console.log("Hola " + nombre);
+        // }
+
+        //15
+        //saludarNombre("Cristian");
+    </script>
+
+    <!-- Funciones con Parametros -->
+    <script>
+        //16
+        // function calcularAreaRectangulo (base, altura) {
+        //     return base * altura;
+        // }
+
+        //17
+        // let base = parseInt(prompt("Ingrese la base"));
+        // let altura = parseInt(prompt("Ingrese la altura"));
+        // console.log(calcularAreaRectangulo(base, altura));
+    </script>
+
+    <!-- Funciones Anonimas -->
+    <script>
+        //18
+        // const mayor = function (a, b) {
+        //     if (a > b) {
+        //         return a;
+        //     } else {
+        //         return b;
+        //     }
+        // }
+
+        //19
+        // let a = prompt("Ingrese un numero");
+        // let b = prompt("Ingrese otro numero");
+        // console.log("El mayor es " + mayor(a, b));
+    </script>
+
+    <!-- Funciones Flecha -->
+    <script>
+        //20
+        //const doble = (a) => { return console.log(a * 2)};
+
+        //21
+        //doble(5);
+    </script>
+
+    <!-- Calculo del Area de un triangulo -->
+    <script>
+        //22
+        // function areaTriangulo (base, altura) {
+        //     return base * altura / 2;
+        // }
+
+        //23
+        // let base = parseInt(prompt("Ingrese la base"));
+        // let altura = parseInt(prompt("Ingrese la altura"));
+        // console.log(areaTriangulo(base, altura));
+    </script>
+
+    <!-- Calculo del perimetro de un cuadrado -->
+    <script>
+        //24
+        // function perimetroCudrado (lado) {
+        //     return lado * 4;
+        // }
+
+        //25
+        // let lado = prompt("Ingrese el lado");
+        // console.log(perimetroCudrado(lado));
+    </script>
+
+    <!-- Calculo area de un circulo -->
+    <script>
+        //26
+        // function areaCirculo (radio) {
+        //     return radio * radio * 3.14;
+        // }
+
+        //27
+        // let radio = prompt("Ingrese el radio");
+        // console.log(areaCirculo(radio));
+    </script>
+
+    <!-- Calculo del perimetro de un rectangulo -->
+    <script>
+        //28
+        // function areaRectangulo (largo, ancho) {
+        //     return largo * ancho;
+        // }
+
+        //29
+        // let largo = prompt("Ingrese el largo");
+        // let ancho = prompt("Ingrese el ancho");
+        // console.log(areaRectangulo(largo, ancho));
+    </script>
+
+    <!-- Calculo de area de un trapecio -->
+    <script>
+        //30
+        function areaTrapecio (baseA, baseB, altura) {
+            return ((baseA + baseB) * altura) / 2;
+        }
+
+        //31
+        let baseA= parseInt(prompt("Ingrese la base A"));
+        let baseB = parseInt(prompt("Ingrese la base B"));
+        let altura = parseInt(prompt("Ingrese la altura"));
+        console.log(areaTrapecio(baseA, baseB, altura));
+    </script>
+</body>
+</html>
