@@ -1,166 +1,106 @@
-/*let a;
-a = 0;
-console.log(a)
-a = a + 1;
-console.log(a)
-a = a + 1;
-console.log(a)
-a = a + 1;
-console.log(a)
-
-for (let i = 0;  i < 10;  i = i + 1)
-    {
-        console.log(i + " usando i = i + 1");
-    }
-
-//1er vuelta:
-i = 0
-console.log(i) = 0
-
-//2da vuelta:
-i = 1
-console.log(i) = 1
-
-//9na vuelta:
-i = 9
-console.log(i) = 9*/
-
-/*---------------------------------------------------------------------------*/
-
-/*i = i + 1 //es lo mismo que decir i++
-
-for(let i = 1;  i <= 10;  i++)
-    {
-        console.log(i + " usando i++");
-    }
-
-let ingreseSuNombre = prompt("Ingrese su Nombre");
-
-//Usando break
-for (let i = 0; i < 15; i++)
-    {
-        if (i == 5)
-            {
-                break;
-            }
-        console.log("El nombre ingresado es: " + ingreseSuNombre + " " + i);
-    }
-
-// Usando continue
-for (let i = 0; i < 10; i++)
-    {
-        if (i == 5)
-            {
-                continue;
-            }
-        console.log("El nombre ingresado es: " + ingreseSuNombre + " " + i);
-    }
-
-let nombre = "Alejandro";
-console.log(nombre.length);
-for(let i = 1; i <= nombre.length ; i++)
-    {
-        console.log("Su nombre es: " + nombre + " iteracion Nro: " + i);
-    }*/
-
-/*-------------------------------------------------------------------------------------*/
-
-/*//Ciclo While
-let i = 0; // Es una Variable Global
-while(i < 5)
-    {
-        console.log("Imprimiendo desde el While " + i);
-        i++;
-    }
-
-// Ciclo do While
-do
-{
-    console.log("Imprimiendo desde el do While " + i);
-    i++;
+function saludar(){
+    console.log("Hola Alumnos.!!");
 }
-while(i <= 7);*/
+// saludar();
+// saludar();
+// saludar();
+// saludar();
+// saludar();
+// saludar();
 
-/*-----------------------------------------------------------------------------*/
+function pedirNombre(){
+    let ingresarNombre = prompt("Ingrese su Nombre");
+    alert("Su nombre es: " + ingresarNombre)
+}
+// pedirNombre();
 
-/*let a = 1; // Formato numerico
-let b = "1"; // Formato String
+function usandoParametros(parametro1, parametro2, parametro3){
+    console.log(parametro1 + parametro2 + parametro3);
+}
+// usandoParametros(3, 5 ,7);
+// usandoParametros("Hola ", "a ", "Todos");
+// usandoParametros(true, false, true);
 
-let suma = a + b; // Da como resultado 11
-console.log(suma); // La operacion + Concatena
+//toogle
+let resultado;
+function sumar(p1, p2) {
+    resultado = p1 + p2;
+}
 
-let sumaParceada = parseInt(a) + parseInt(b); // Da como resultado 2
-console.log(sumaParceada);  // La operacion + Suma
+function mostrarResultado(resultado){
+    console.log(resultado);
+}
+// sumar(2, 32);
+// mostrarResultado(resultado)
 
-let ingreseUnNumeroA = prompt("Ingrese el 1er Numero");
-let ingreseUnNumeroB = prompt("Ingrese el 2do Numero");
-let resultado = parseInt(ingreseUnNumeroA) + parseInt(ingreseUnNumeroB);
-let resultadoFloat = parseFloat(ingreseUnNumeroA) + parseFloat(ingreseUnNumeroB);
-console.log(resultado);
-console.log(resultadoFloat);*/
+// sumar(12, 342);
+// mostrarResultado(resultado)
 
-/*-------------------------------------------------------------------------------------*/
+// sumar(24, 532);
+// mostrarResultado(resultado)
 
-// Switch
-/*Muestra un mensaje de alerta que indique si el usuario es 
-menor de edad o mayor de edad, dependiendo de su edad ingresada.
-*/
+function sumarConReturn(p1, p2){
+    let resultadoConReturn = p1 + p2;
+    return resultadoConReturn;
+}
+//console.log(sumarConReturn(2, 3));
 
-/*let edadIngresada = prompt("Ingrese su Edad: ");
+function sumarConReturnSinVariable(p1, p2){
+    return p1 + p2;
+}
+let res = sumarConReturnSinVariable(12, 6);
+//console.log(res);
 
-if (edadIngresada >= 18) //Condicion correcta para Mayor de edad
-    {
-        alert("Su edad es de: " + edadIngresada + " Años, entonces es Mayor de Edad");
-    }
-else if (edadIngresada > 0 && edadIngresada < 18) //Condicion correcta para Mayor de edad
-    {
-        alert("Su edad es de: " + edadIngresada + " Años, entonces es Menor de Edad");
-    }
-else if(edadIngresada <= 0) // Para edad Menor o Igual a 0
-    {
-        alert("La Edad ingresada debe ser Mayor a 0 !!");
-    }
-else{
-        alert("La Edad ingresada es Incorrecta!!!");
-    }*/
-
-// Ahora lo vamos a resolver usando un Switch
-let edadIngresada;
-do
-{
-    edadIngresada = prompt("Ingrese su Edad o escriba 'ESC' para salir: ");
-    if (edadIngresada !== "ESC")
-        {
-            edadIngresada = parseInt(edadIngresada); // Convertimos a número entero
-            switch (edadIngresada)
-            {
-                case 18:
-                    console.log("Su edad es de: " + edadIngresada + " años, entonces es Mayor de Edad");
-                    break;
-                case 17:
-                    console.log("Su edad es de: " + edadIngresada + " años, entonces es Menor de Edad");
-                    break;
-                case 0:
-                    console.log("La Edad ingresada debe ser Mayor a 0 !!");
-                    break;
-                default:
-                    console.log("La Edad ingresada es Incorrecta!!!");
-                    break;
+//Calculadora
+function calculadora(numero1, numero2, operacion){
+    switch (operacion) {
+        case "+":
+            return numero1 + numero2;
+            break;
+        case "-":
+            return numero1 - numero2;
+            break;
+        case "*":
+            return numero1 * numero2;
+            break;
+        case "/":
+            if(numero2 != 0){
+                return numero1 / numero2;
+            } else {
+                alert("No se puede dividir por cero.!")
             }
-        }
+            break;
+        default:
+            return 0;
+            break;
+    }
 }
-while (edadIngresada !== "ESC");
+//console.log(calculadora(10, 0, "/"));
 
-let numero = parseInt(prompt("Ingrese un numero"));
-switch(numero)
-{
-    case  1:
-        console.log("El numero es Uno");
-        break;
-    case  2:
-        console.log("El numero es Dos");
-        break;
-    default:
-        console.log("El numero no es ni Uno ni Dos, es: " + numero);
-        break;
+//Funciones anonimas
+const suma = function (a, b) { return a + b}
+const resta = function (a, b) { return console.log(a - b)}
+const algo = function () { return console.log("Algo")}
+// console.log(suma(2, 5));
+// algo();
+// resta(80, 50);
+
+// Funciones Flecha
+const multiplicar = (a, b) => { return console.log(a * b) }
+const restaFlecha = (a, b) => console.log(a - b); // Tiene un return implicito
+
+multiplicar(4, 6);
+restaFlecha(8, 6);
+
+const iva = x => x * 0.21; // Tiene un return implicito
+console.log("El iva es de: " + iva(100));
+
+const dividir = (a, b) => { 
+    if(b != 0) { 
+        return a / b 
+    }
+    else { 
+        alert("No se puede dividir por cero.!");
+    }
 }
+console.log(dividir(6, 0));
