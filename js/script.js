@@ -1,176 +1,128 @@
-// Objetos en JS
-// let nombre = "Marcos";
-// let edad = 18;
-// let colorDeOjos = "Azules";
-// let altura = 1.78;
-// let estadoCivil = "Soltero";
-// console.log(nombre);
-// console.log(edad);
+// // Arrays
+// const arrayVacio = [];
 
-//Vamos a armar un Objeto
-// const marcos = {
-//     // key: "value"
-//     nombre: "Marcos",
-//     edad: 18, 
-//     colorDeOjos: "Azules", 
-//     altura: 1.78,
-//     estadoCivil: "Soltero"
-// };
+// // Tipo de datos dentro del Array
 
-// console.log("Marcos: ", marcos);
+// const arrayNumerico = [1, 2, 3, 4, 5, 5.5]; // Tipo Numerico
 
-// console.log(marcos.nombre);
-// console.log(marcos["edad"]);
-// console.log(marcos.colorDeOjos);
-// console.log(marcos.altura);
-// console.log(marcos.estadoCivil);
+// const arrayConLetras = ['a', 'b', 'c']; // Tipo caracter
 
-// console.log(marcos["nombre"]);
-// console.log(marcos.edad);
-// console.log(marcos["colorDeOjos"]);
-// console.log(marcos["altura"]);
-// console.log(marcos["estadoCivil"]);
+// // const arrayConString = ["Hola", "mundo", "Como", "va?"]; // Tipo String
 
-// marcos.estadoCivil = "Casado";
-// console.log("Marcos: ", marcos);
-// marcos["nombre"] = "Marcos Mellebovsky"
-// console.log("Marcos: ", marcos);
-// marcos.edad = 19;
-// console.log("Marcos: ", marcos);
+// const arrayBoolean = [true, false, true]; // Tipo Booleano
 
-//Constructores
-// function Persona(nombre, edad, colorDeOjos, altura, estadoCivil) {
-//     this.nombre = nombre;
-//     this.edad = edad;
-//     this.colorDeOjos = colorDeOjos;
-//     this.altura = altura;
-//     this.estadoCivil = estadoCivil;
+// // const arrayMixto = ['a', 23, "Hola", true]; // Tipo mixto
+
+// const arrayObjetos = [
+//     {nombre: "Producto1", cantidad: 5},
+//     {nombre: "Producto2", cantidad: 8}
+// ]; // Tipo Objetos
+
+const arrayMixtoConObjetos = ['a', 23, "Hola", true, 
+{nombre: "Producto3", cantidad: 8}]; // Tipo mixto Con Objetos
+
+// console.log(arrayNumerico[0]);
+// console.log(arrayObjetos[1]);
+
+// for (let index = 0; index < 6; index++) {
+//     //alert(arrayNumerico[index]);
 // }
 
-// // Vamos a hacer una Instancia del Objeto Persona
-// // ¿Como lo hacemos? Usando new
-// const ernesto = new Persona("Ernesto", 36, "Marrones", 1.73, "Es Complicado");
-// console.log("Ernesto: ", ernesto);
-// const victoria = new Persona("Victoria", 32, "Marrones", 1.63, "Noviazgo")
-// console.log("Victoria: ", victoria);
-
-// Construccion Literal de un Objeto
-// function PersonaLiteral(literal) {
-//     this.nombre = literal.nombre;
-//     this.edad = literal.edad;
-//     this.colorDeOjos = literal.colorDeOjos;
-//     this.altura = literal.altura;
-//     this.estadoCivil = literal.estadoCivil;
+// for (let index = 0; index < 5; index++) {
+//     //alert(arrayMixtoConObjetos[index]);
 // }
-// const marcos = new PersonaLiteral({
-//     nombre: "Marcos",
-//     edad: 18, 
-//     colorDeOjos: "Azules", 
-//     altura: 1.78,
-//     estadoCivil: "Soltero"
-// })
-// console.log("Marcos: ", marcos);
+//console.log(arrayNumerico.length);
+//console.log(arrayMixtoConObjetos.length);
 
-// Diferencia entre Funcion y Metodo
-// Funcion que retorna algo
-// function hola() {
-//     return console.log("Hola");
+// for (let index = 0; index < arrayMixtoConObjetos.length; index++) {
+//     console.log(arrayMixtoConObjetos[index]);
 // }
 
+// Agregar elementos a un Array
+// arrayMixto.push("Al final"); // Agrega un elemento al Array al final
+// console.log(arrayMixto);
+// arrayMixto.unshift("Al principio"); // Agrega un elemento al Array al principio
+// console.log(arrayMixto);
+// arrayMixto.pop();
+// console.log(arrayMixto);// Elimina el elemento al Array del final
+// arrayMixto.shift();
+// console.log(arrayMixto);// Elimina el elemento al Array del principio
+// arrayMixto.splice(1, );
+//console.log(arrayMixto);
+// console.log(arrayConString);
+// arrayConString.splice(2, 2);
+// console.log(arrayConString);
+// arrayConString.splice(1, 2);
+// console.log(arrayConString);
 
-// Metodo Constructor (Solo el Metodo Constructor empieza con Mayuscula)
-// function PersonaLiteral(literal) {
-//     this.nombre = literal.nombre;
-//     this.edad = literal.edad;
-//     this.colorDeOjos = literal.colorDeOjos;
-//     this.altura = literal.altura;
-//     this.estadoCivil = literal.estadoCivil;
+// Uso de join
+// const arrayConString = ["Hola", "mundo", "Como", "va?"];
+// console.log( arrayConString.join(", "));
+// console.log( arrayConString.join(" "));
+// console.log( arrayConString.join("* "));
+// console.log( arrayConString.join(" Una Frase "));
+
+// Uso de concat
+// const arrayConString = ["Hola", "mundo", "Como", "va?"];
+// const arrayMixto = ['a', 23, "Hola", true];
+// console.log(arrayConString.concat(arrayMixto));
+
+// Uso de slice
+// const nuevoArrayConString = arrayConString.slice(0, 2);
+// console.log(nuevoArrayConString);
+// console.log(nuevoArrayConString.indexOf("Hola"));
+// console.log(nuevoArrayConString.indexOf("mundo"));
+// console.log(nuevoArrayConString.indexOf("Mundo"));
+// console.log(nuevoArrayConString.indexOf("Como"));
+// // Uso de include
+// console.log(nuevoArrayConString.includes("Hola"));
+// console.log(nuevoArrayConString.includes("mundo"));
+// console.log(nuevoArrayConString.includes("Mundo"));
+// console.log(nuevoArrayConString.includes("Como"));
+
+// Uso de reverse
+// console.log(arrayConString);
+// console.log(arrayConString.reverse());
+
+// const arrayObjetos = [
+//     {nombre: "Producto1", cantidad: 5},
+//     {nombre: "Producto2", cantidad: 8}
+// ];
+
+// arrayObjetos.push({nombre: "Producto3", cantidad: 58});
+
+// console.log(arrayObjetos);
+// const productos = [
+//     { id: 1, nombre: "Arroz" },
+//     { id: 2, nombre: "Fideo" },
+//     { id: 3, nombre: "Pan" }
+// ];
+
+// for (const index of productos) {
+//     console.log("El ID es: " + index.id);
+//     console.log("El Nombre del Producto es: " + index.nombre);
+//     //console.log(index);
 // }
-
-// Objeto String
-// let nombre = new String("Hola");
-// console.log(nombre)
-
-// let nombreBasico = "Hola Mundo";
-// console.log(nombreBasico)
-// console.log(nombreBasico.length) // length es un metodo del Objeto String
-
-// console.log(nombreBasico.toLowerCase())
-// console.log(nombreBasico.toUpperCase())
-
-// function Persona(nombre, edad, colorDeOjos, altura, estadoCivil) {
-//     // Atributos
-//     this.nombre = nombre;
-//     this.edad = edad;
-//     this.colorDeOjos = colorDeOjos;
-//     this.altura = altura;
-//     this.estadoCivil = estadoCivil;
-//     // Metodo del Objeto
-//     this.saludar = function () {
-//         console.log("Hola mi Nombre es: " + this.nombre)
-//     }
-// }
-
-// const victoria = new Persona("Victoria", 32, "Marrones", 1.63, "Noviazgo")
-// console.log("Victoria: ", victoria);
-// victoria.saludar();
-
-// // Operador IN y FOR...IN
-// console.log(victoria.nombre)
-// // Usando IN (Me indica si existe la Clave en el Objeto)
-// console.log("nombre" in victoria);
-// console.log("apellido" in victoria);
-
-// // Usar el Iterador For In (Con esto recorremos un Objeto y podemos acceder a todos sus Atributos)
-// for (const dato in victoria) {
-//     console.log(victoria[dato])
-// }
-
-// Clases
-// class Vehiculo {
-
-//     // Metodo Constructor
-//     constructor(tipo, marca, condicion, color) {
-//         this.tipo = tipo.toUpperCase();
-//         this.marca = marca;
-//         this.condicion = condicion;
-//         this.color = color;
-//     }
-
-//     // Creamos metodos
-//     enciende() {
-//         console.log("El vehiculo " + this.tipo + " Esta encendido")
-//     }
-// }
-
-// // Para construir un Veiculo, hago una instancia de la Clase
-
-// const auto = new Vehiculo("Auto", "Nissan", "Usado", "Fucsia");
-// console.log(auto);
-// auto.enciende();
-// const lancha = new Vehiculo("Lancha", "Philips", "Nueva", "Blanca");
-// console.log(lancha);
-// lancha.enciende();
 
 class Producto {
-    constructor(nombre, descripcion, categoria, precio, stock, ) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.categoria = categoria;
+    constructor(id, nombre, precio) {
+        this.id = id;
+        this.nombre = nombre.toUpperCase();
         this.precio = parseFloat(precio);
-        this.stock = parseInt(stock);        
     }
 
-    agregamosIva() {
+    sumarIva() {
         this.precio = this.precio * 1.21;
-    }
-
-    vender() {
-        console.log("El Producto " + this.nombre + " fue Vendido.")
     }
 }
 
-const producto1 = new Producto("Azucar", "Azucar Blanca", "Almacen", 1000.50, 50);
-console.log(producto1)
-producto1.agregamosIva();
-producto1.vender();
+const carrito = [];
+
+carrito.push(new Producto(1, "Arroz", 1000.5));
+carrito.push(new Producto(2, "Azucar", 1200.5));
+carrito.push(new Producto(3, "Leche", 850));
+console.log(carrito);
+
+for (const porCadaProducto of carrito ) {
+    porCadaProducto.sumarIva();
+}
