@@ -152,25 +152,25 @@
 // console.log(lancha);
 // lancha.enciende();
 
-class Producto {
-    constructor(nombre, descripcion, categoria, precio, stock, ) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.categoria = categoria;
-        this.precio = parseFloat(precio);
-        this.stock = parseInt(stock);        
-    }
+// class Producto {
+//     constructor(nombre, descripcion, categoria, precio, stock, ) {
+//         this.nombre = nombre;
+//         this.descripcion = descripcion;
+//         this.categoria = categoria;
+//         this.precio = parseFloat(precio);
+//         this.stock = parseInt(stock);        
+//     }
 
-    agregamosIva() {
-        this.precio = this.precio * 1.21;
-    }
+//     agregamosIva() {
+//         this.precio = this.precio * 1.21;
+//     }
 
-    vender() {
-        console.log("El Producto " + this.nombre + " fue Vendido.")
-    }
-}
+//     vender() {
+//         console.log("El Producto " + this.nombre + " fue Vendido.")
+//     }
+// }
 
-const producto1 = new Producto("Azucar", "Azucar Blanca", "Almacen", 1000.50, 50);
-console.log(producto1)
-producto1.agregamosIva();
-producto1.vender();
+// const producto1 = new Producto("Azucar", "Azucar Blanca", "Almacen", 1000.50, 50);
+// console.log(producto1)
+// producto1.agregamosIva();
+// producto1.vender();
