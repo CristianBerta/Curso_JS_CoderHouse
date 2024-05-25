@@ -36,13 +36,13 @@ function producto (nombre, precio, cantidad)
 const azucar = new producto("Azucar", 1300, 2);
 
 //6
-function persona (nombre, edad, ciudad)
-{
-    this.nombre = nombre;
-    this.edad = edad;
-    this.ciudad = ciudad;
-}
-const cristian = new persona("Cristian", 35, "Florencio Varela");
+// function persona (nombre, edad, ciudad)
+// {
+//     this.nombre = nombre;
+//     this.edad = edad;
+//     this.ciudad = ciudad;
+// }
+// const cristian = new persona("Cristian", 35, "Florencio Varela");
 
 //7
 function libro (titulo, autor, anio)
@@ -52,3 +52,19 @@ function libro (titulo, autor, anio)
     this.anio = anio;
 }
 const libro1 = new libro("El visitante", "Stephen King", 2000);
+
+//USO DE THIS
+//8
+const rectangulo = 
+{
+    base : 2,
+    altura : 3
+}
+function CalcularArea(rectangulo) {
+    this.base = rectangulo.base,
+    this.altura = rectangulo.altura
+    return base * altura
+}
+console.log(CalcularArea(rectangulo));
+
+//9
