@@ -370,26 +370,26 @@ class TiendaOnline {
     }
     //Funcion para realizar una venta
     venta(nombreProducto, nombreCliente) {
-        // Buscar el producto
+        //Busco el producto
         const producto = this.productos.find(p => p.nombre === nombreProducto);
         if (producto && producto.cantidad > 0) {
-            // Disminuir la cantidad disponible del producto
+            //Disminuyo la cantidad
             producto.cantidad--;
             console.log("Venta realizada: " + nombreProducto + " Cantidad: " + producto.cantidad);
-            // Enviar correo de confirmación al cliente
+            //Envio el correo
             this.enviarEmail(nombreCliente, nombreProducto);
         } else {
             console.log("Producto no disponible o fuera de stock: " + nombreProducto);
         }
     }
 }
-const tienda = new TiendaOnline();
+const negocio = new TiendaOnline();
 
-tienda.agregarProducto("Laptop", 1000, 5);
-tienda.agregarProducto("Smart", 500, 10);
-tienda.agregarProducto("Tablet", 300, 7);
+negocio.agregarProducto("Laptop", 1000, 5);
+negocio.agregarProducto("Smart", 500, 10);
+negocio.agregarProducto("Tablet", 300, 7);
 
-tienda.agregarCliente("Juan", "juan@gmail", "Calle 123");
-tienda.agregarCliente("Maria", "maria@gmail", "Avenida 456");
+negocio.agregarCliente("Juan", "juan@gmail", "Calle 123");
+negocio.agregarCliente("Maria", "maria@gmail", "Avenida 456");
 
-tienda.venta("Laptop", "Juan");
+negocio.venta("Laptop", "Juan");
