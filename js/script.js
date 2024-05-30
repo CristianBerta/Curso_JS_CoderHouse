@@ -1,151 +1,123 @@
-// Funciones de orden superior
-//Analicemos este codigo:
-/**
- * Se declara una variable que, a través de un iterador, 
- * va acumulando la suma del contador:
- */
+// const PI = Math.PI;
+// console.log(PI);
 
-// function sumarRango(inicio, fin) {
-//     let total = 0;
-//     for (let i = inicio; i <= fin; i++) {
-//         total += i;
+// const E = Math.E;
+// console.log(E);
+
+// console.log(Math.max(12, 5, -89, 55, 787, 1, -56));
+// console.log(Math.min(12, 5, -89, 55, 787, 1, -56));
+
+// const PI = Math.PI; // 3.141592653589793
+// const A = 5.8005;
+// const B = -9.00265;
+// const C = 9.5;
+
+// // CEIL
+// console.log( Math.ceil(PI)); // 4
+// console.log( Math.ceil(A)); // 6
+// console.log( Math.ceil(B)); // -9
+// console.log( Math.ceil(C)); // 10
+
+// // FLOOR
+// console.log( Math.floor(PI)); // 3
+// console.log( Math.floor(A)); // 5
+// console.log( Math.floor(B)); // -10
+// console.log( Math.floor(C)); // 9
+
+// // ROUND
+// console.log( Math.round(PI)); // 3
+// console.log( Math.round(A)); // 6
+// console.log( Math.round(B)); // -9
+// console.log( Math.round(C)); // 10
+
+// Random
+// console.log(Math.random()); // Genera nros aleatorios entre 0 y 1
+
+// console.log(Math.random() * 10); // Genera nros aleatorios entre 0 y 10
+
+// console.log(Math.random() * 100); // Genera nros aleatorios entre 0 y 100
+
+// console.log(Math.random() * 10 + 10 ); // Genera nros aleatorios entre 10 y 20
+
+// const gen = () => {
+//     return console.log(Math.round(Math.random() * 100));
+// }
+
+// gen();
+
+// Square Root // Raiz Cuadrada
+// console.log(Math.sqrt(9)); // 3
+// console.log(Math.sqrt(4)); // 2
+// console.log(Math.sqrt(81)); // 9
+// console.log(Math.sqrt(Math.random() * 100)); // Aleatorio
+// console.log(Math.sqrt(-81)); // NaN
+
+// POW // Potencia
+// console.log(Math.pow(9,2)) // 9 al Cuadrado = 81
+// console.log(Math.pow(3,4)) // 3 a la Cuarta = 81
+// console.log(Math.pow(36, 1/2)) // Raiz cuadra de 36 = 6
+
+// console.log(parseInt(Math.pow(-27, 1/3))) // Raiz cubica de -27 = -3
+// console.log(parseInt(Math.pow(-81, 1/2))) // NaN
+// console.log(Math.cbrt(-27)); // Raiz Cubica
+
+// function raizCubica(numero) {
+//     if(numero < 0) {
+//         return console.log(-Math.pow(Math.abs(numero), 1/3));
+//     } else {
+//         return console.log(Math.pow(numero, 1/3));
 //     }
-//     return total;
-// }
-// console.log(sumarRango(1, 100));
-// console.log(sumarRango(1, 60));
-// console.log(sumarRango(0, 160));
-
-
-// function mayorQue(numero) {
-//     return (numeroAComparar) => numeroAComparar > numero; // Retorna una Funcion Anonima
 // }
 
-// // const algo = 0;
-// const mayorQueDiez = mayorQue(10); // let mayorQueDiez = (numeroAComparar) => numeroAComparar > 10;
-// // const mayorQueDiez = (numeroAComparar) => numeroAComparar > numero; 
-// console.log( mayorQueDiez(12) ); // numeroAComparar = 12 // true
-// console.log( mayorQueDiez(8) ); // numeroAComparar = 8 // false
+// raizCubica(-27);
+// raizCubica(-81);
+// raizCubica(144);
 
-// function asignarOperacion(operacion){
-//     if(operacion == "sumar") {
-//         return (a, b) => a + b;
-//     } else if (operacion == "restar") {
-//         return (a, b) => a - b;
-//     }
-// }
+// --------------------------------
 
-// const funcionSumar = asignarOperacion("sumar"); // const funcionSumar = (a, b) => a + b;
-// const funcionRestar = asignarOperacion("restar"); // const funcionRestar = (a, b) => a - b;
+// console.log( new Date() ); // Tue May 28 2024 20:12:39 GMT-0300 (hora estándar de Argentina)
 
-// console.log(funcionSumar(4, 5)); // 9
-// console.log(funcionRestar(8, 3)); // 5
+// // Metodo Constructor
+// console.log( new Date(2004, 3, 20) );
+// console.log( new Date(2024, 11, 24, 23, 59, 59) ); // Tue Dec 24 2024 23:59:59 GMT-0300 (hora estándar de Argentina)
 
-// Recibir una Funcion por parametro
+// console.log( new Date("December 24, 2024 23:59:59") ); // Tue Dec 24 2024 23:59:59 GMT-0300 (hora estándar de Argentina)
 
-// function porCadaElemento(myArray, myFuncion){
-//     for ( const elemento of myArray ) { // Por cada elemento de myArray, ejecuta la funcion
-//         myFuncion(elemento); // Esto se le aplique a cada elemento de myArray
-//     }
-// }
+// const HOY = new Date();
+// console.log(HOY.getFullYear()) // 2024
+// console.log(HOY.getMonth()) // 4 = Mayo
+// console.log(HOY.getDay()) // 2 = Martes
 
-// const numeros = [1, 2, 3, 4, 5, 6];
-// porCadaElemento(numeros, console.log); // Cuando paso una funcion como parametro no lleva ()
-// // Los parentesis los lleva cuando la defino, o cuando la invoco o la llamo.
+// console.log(HOY);
+// console.log(HOY.toDateString()); // Tue May 28 2024
+// console.log(HOY.toLocaleString()); // 28/5/2024, 20:32:26
+// console.log(HOY.toLocaleDateString()); // 28/5/2024
+// console.log(HOY.toTimeString()); // 20:32:26 GMT-0300 (hora estándar de Argentina)
 
-// let total = 0;
-// function acumuladora(numero) {
-//     total += numero;
-// }
-// porCadaElemento(numeros, acumuladora);
-// console.log("Total Acumulado: " + total);
+// Diferencias entre fechas
+// const HOY = new Date(2024, 4, 28);
+// const NAVIDAD = new Date("December 25, 2024 00:00:00");
+// // console.log(HOY);
+// // console.log(NAVIDAD);
 
-// const numerosDuplicados = [];
+// const DIFERENCIA = NAVIDAD - HOY;
+// // Diferencia en Milisegundos 
+// console.log(DIFERENCIA); // 18230400000 Milisegundos
 
-// porCadaElemento(numeros, (elemento) => {
-//     numerosDuplicados.push(elemento * 2);
-// })
+// // Diferencia en Dias
 
-// console.log(numerosDuplicados.join(", "));
+// const MILISEGUNDOS_DIA = 60 * 60 * 24 * 1000; // 86400000 Milisegundo de 1 dia
+// console.log(MILISEGUNDOS_DIA);
 
+// const DIFERENCIA_EN_DIAS = (NAVIDAD - HOY) / MILISEGUNDOS_DIA;
+// console.log("Faltan " + DIFERENCIA_EN_DIAS + " para Navidad.!!");
 
-// For Each
-// numerosDuplicados.forEach( (numero) => {
-//     console.log(numero);
-// })
+// Calcular el tiempo de Ejecucion de un programa
 
-// let nuevoArray = [];
+const INICIO = new Date();
+for(let i = 0; i < 10000; i++) {
+    console.log("Un programa ejecutándose.!!");
+}
+const FINAL = new Date();
 
-// numerosDuplicados.forEach( (numeros) => {
-//     nuevoArray.push(numeros - 1);
-// })
-
-// console.log(nuevoArray);
-
-// Find
-const cursos = [
-    {nombre: "JavaScript", cantAlumnos: 120},
-    {nombre: "JavaScript", cantAlumnos: 130},
-    {nombre: "React", cantAlumnos: 90},
-    {nombre: "PHP", cantAlumnos: 60}
-]
-console.log(cursos);
-
-const resultadoFind = cursos.find( (elemento) => elemento.nombre === "JavaScript");
-console.log(resultadoFind);
-// Filter
-const resultadoFilter = cursos.filter( (elemento) => elemento.nombre.includes("JavaScript"));
-console.log(resultadoFilter);
-
-// Some
-const resultadoSome = cursos.some( (elemento) => elemento.nombre === "JavaScript");
-const resultadoSomeFalse = cursos.some( (elemento) => elemento.nombre === "Javascript");
-console.log(resultadoSome);
-console.log(resultadoSomeFalse);
-
-// Map
-const resultadoMap = cursos.map((elemento) => elemento.nombre );
-console.log(resultadoMap);
-
-const actualizarCantidadDeAlumnos = cursos.map( (elemento) => {
-    return {
-        nombreNuevo: elemento.nombre,
-        cantidadNueva: elemento.cantAlumnos + 20
-    }
-});
-
-console.log(actualizarCantidadDeAlumnos);
-
-// Reduce
-const numeros = [1, 2, 3, 4, 5, 6];
-
-const totalEnNumeros = numeros.reduce((acumulador, elemento) => acumulador + elemento, 10 );
-console.log(totalEnNumeros);
-
-// Sort
-const numerosDesordenados = [102, 24, 43, 4, 15, 96];
-console.log(numerosDesordenados);
-numerosDesordenados.sort((a, b) => a - b ); // Forma Ascendente
-console.log(numerosDesordenados);
-numerosDesordenados.sort((a, b) => b - a ); // Forma Descendente
-console.log(numerosDesordenados);
-
-// Sort con Objetos
-const cursosConSort = [
-    {nombre: "JavaScript", cantAlumnos: 120},
-    {nombre: "JavaScript", cantAlumnos: 130},
-    {nombre: "React", cantAlumnos: 90},
-    {nombre: "PHP", cantAlumnos: 60}
-]
-
-cursosConSort.sort((a, b) => {
-    if(a.cantAlumnos > b.cantAlumnos) {
-        return 1;
-    } 
-    if( a.cantAlumnos < b.cantAlumnos ) {
-        return -1;
-    }
-    return 0;
-})
-
-console.log(cursosConSort);
+console.log("El proceso tardó: " + (FINAL - INICIO) + " de Milisegundos.!");
