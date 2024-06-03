@@ -1,79 +1,166 @@
-//Usa forEach para imprimir cada elemento de un array de números
-let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90, 101];
-// numeros.forEach((numero) => {
-//     console.log(numero)
-// });
+//Arrays y Métodos de Array
+//1.Crea un array con los números del 1 al 5 y muéstralo en la consola
+let numeros = [1, 2, 3, 4, 5, 6];
+console.log(numeros);
 
-//Utiliza find para encontrar el primer número mayor que 50 en un array de números.
-const primerNumeroMayor50 = numeros.find( (elemento) => elemento > 50);
-console.log(primerNumeroMayor50);
+//2.Usa push para agregar el número 6 al final del array numeros
+// numeros.push(6);
+// console.log(numeros);
 
-//Emplea filter para obtener todos los números pares de un array de números.
-const numPares = numeros.filter((elemento) => elemento%2 === 0);
-console.log(numPares);
+//3.Usa pop para eliminar el último elemento del array numeros
+// numeros.pop();
+// console.log(numeros);
 
-//Utiliza some para verificar si un array de palabras contiene al menos una palabra de más de 10 caracteres.
-let palabras = ["cristian", "alejandro", "berta"];
-const palabra5Caracteres = palabras.some((elemento) => elemento.length > 5);
-console.log(palabra5Caracteres);
+//4.Usa unshift para agregar el número 0 al inicio del array numeros
+// numeros.unshift(0);
+// console.log(numeros);
 
-//Usa map para duplicar cada elemento de un array de números.
-const numDuplicados = numeros.map((elemento) => elemento*2);
-console.log(numDuplicados);
+//5.Usa shift para eliminar el primer elemento del array numeros
+// numeros.shift();
+// console.log(numeros);
 
-//Emplea reduce para obtener la suma de todos los elementos de un array de números.
-const numSumados = numeros.reduce((acumulador, elemento) => acumulador + elemento, 0);
-console.log(numSumados);
+//Funciones de Orden Superior
+//6.Usa `map` para crear un nuevo array que contenga cada número del array `numeros` multiplicado por 2
+// const numDuplicados = numeros.map((elemento) => elemento*2);
+// console.log(numDuplicados);
 
-//Utiliza sort (modifica el array original) para ordenar un array de palabras alfabéticamente.
-palabras.sort();
-console.log(palabras);
+//7.Usa `filter` para crear un nuevo array que contenga solo los números pares del array `numeros`
+// const numPares = numeros.filter((elemento) => elemento%2 === 0);
+// console.log(numPares);
 
-//Crea una clase Alumno con las propiedades "nombre", "edad" y "notas" (un array de números).
-//Crea varios objetos Alumno y realiza operaciones con ellos
-//(calcular promedio de notas, encontrar el alumno con la mejor nota, etc.) utilizando funciones de orden superior.
+//8.Usa `find` para encontrar el primer número mayor que 3 en el array `numeros`
+// const primerNumeroMayor3 = numeros.find( (elemento) => elemento > 3);
+// console.log(primerNumeroMayor3);
 
+//9.Usa `some` para verificar si algún número en el array `numeros` es mayor que 4.
+// const numerosMayor4 = numeros.some((elemento) => elemento > 4);
+// console.log(numerosMayor4);
 
-//Utiliza map para convertir un array de temperaturas en grados Celsius a grados Fahrenheit.
+//10.Usa `reduce` para multiplicar todos los números en el array `numeros`
+// const numMultiplicados = numeros.reduce((acumulador, elemento) => acumulador * elemento, 1);
+// console.log(numMultiplicados);
 
-
-//Emplea filter para obtener todos los objetos de un array de productos que tengan un precio mayor a $50.
-
-
-//Usa forEach para imprimir la tabla de multiplicar de un número específico (por ejemplo, 5).
-
-
-//Utiliza find para encontrar el primer objeto producto con un descuento mayor al 30% en un array de productos.
-
-
-//Emplea some para verificar si hay al menos un alumno con edad menor a 18 años en un array de objetos Alumno.
-
-
-//Usa reduce para obtener el producto de todos los elementos de un array de números.
-
-
-//Utiliza sort para ordenar un array de fechas en orden ascendente.
-
-
-//Emplea map para obtener un array de objetos con las edades de los alumnos en años-luz
-//(dividiendo la edad en años por 9.46 trillones, que es la cantidad de kilómetros que recorre la luz en un año).
-
-
-//Utiliza filter para obtener todos los números primos de un array de números.
-
-
-//Emplea reduce para obtener el promedio de las edades de un array de objetos Alumno.
-
-
-//Usa forEach para imprimir todos los días de la semana en inglés.
-
-
-//Utiliza sort para ordenar un array de objetos producto por precio de forma ascendente.
-
-
-//Expresar el siguiente script en una sola linea de codigo:
-// let total = 0
-// for (let i = 1; i <= 10; i++) {
-//     total += i
+//Retornar Funciones y Recibir Funciones por Parámetro
+//11.Crea una función que retorne otra función que sume un número dado
+// function sumador(numero) {
+//     return function(otroNumero) {
+//         return numero + otroNumero;
+//     };
 // }
-// console.log(total)
+// const sumar = sumador(5);
+// console.log(sumar(10));
+
+//12.Crea una función que reciba una función como parámetro y la ejecute con un valor dado
+// function ejecutarUnaFuncion(funcion, valor) {
+//     return funcion(valor);
+// }
+
+// function saludar(nombre) {
+//     return "Hola " + nombre;
+// }
+// const resultado = ejecutarUnaFuncion(saludar, "Juan");
+// console.log(resultado);
+
+//Métodos de Búsqueda y Transformación
+//13.Usa `indexOf` para encontrar el índice del número 3 en el array `numeros`
+//console.log(numeros.indexOf(3));
+
+//14.Usa `includes` para verificar si el número 4 está en el array `numeros`
+//console.log(numeros.includes(4));
+
+//15.Usa `sort` para ordenar los números del array `numeros` en orden ascendente
+//console.log(numeros.sort((a, b) => b - a));
+
+//El Objeto Math
+//16.Usa `Math.random` y `Math.floor` para generar un número aleatorio entre 0 y 100
+//let numeroAle = Math.floor(Math.random()*101);
+//console.log(numeroAle);
+
+//17.Usa `Math.round` para redondear el número 4.7 al entero más cercano
+//console.log(Math.round(4.7));
+
+//18.Usa `Math.max` para encontrar el máximo de los números 1, 2, 3, 4 y 5
+//console.log(Math.max(1, 2, 5, 9));
+
+//19.Usa `Math.min` para encontrar el mínimo de los números 1, 2, 3, 4 y 5
+//console.log(Math.min(1, 2, 5, 9));
+
+//20.Usa `Math.sqrt` para calcular la raíz cuadrada de 16
+//console.log(Math.sqrt(16));
+
+//La Clase Date
+//21.Crea una instancia de `Date` y muestra la fecha y hora actual
+//const fecha = new Date();
+//console.log(fecha);
+
+//22.Usa `getFullYear` para obtener el año actual
+//console.log(fecha.getFullYear());
+
+//23.Usa `getMonth` para obtener el mes actual (recuerda que los meses comienzan en 0)
+//console.log(fecha.getMonth());
+
+//24.Usa `getDate` para obtener el día del mes actual
+//console.log(fecha.getDate());
+
+//25.Usa `getDay` para obtener el día de la semana actual (0 es domingo)
+//console.log(fecha.getDay());
+
+//Ejercicios Integradores
+//26.Crea un array de fechas y ordénalas en orden ascendente.
+let fechas = [
+    new Date('2023-12-17'),
+    new Date('2021-06-25'),
+    new Date('2022-08-14'),
+    new Date('2020-01-01'),
+    new Date('2024-03-05')
+];
+console.log(fechas.sort((a, b) => a - b));
+
+//27.Crea una función que reciba un array y un número,
+//y devuelva un nuevo array con los números mayores que el valor dado.
+function mayoresQue(array, num) {
+    return array.filter(numero => numero > num);
+}
+let numMayores = mayoresQue(numeros, 3);
+console.log(numMayores);
+
+//28.Crea una función que reciba un array de números y devuelva el promedio
+function promedio(array) {
+    const suma = array.reduce((acumulador, num) => acumulador + num, 0);
+    return suma / array.length;
+}
+console.log(promedio(numeros));
+
+//29.Crea una función que reciba una fecha y un número de días, y devuelva la nueva fecha con los días agregados
+function agregarDias(fecha, dias) {
+    let nuevaFecha = new Date(fecha);
+    nuevaFecha.setDate(nuevaFecha.getDate() + dias);
+    return nuevaFecha;
+}
+let nuevaFecha = agregarDias('2024-06-01', 7);
+console.log(nuevaFecha);
+
+//30.Crea una función que reciba un array y devuelva un nuevo array con los números duplicados
+
+
+//31.Crea una función que reciba un array de fechas y
+//devuelva un nuevo array con las fechas en formato legible (ej. 'dd/mm/yyyy')
+
+//32.Crea una función que reciba una fecha de nacimiento y devuelva la edad
+
+//33.Crea una función que reciba un array de arrays de números y devuelva la suma de todos los elementos
+
+//34.Crea una función que reciba un array de números y devuelva un objeto con el mayor y el menor número
+
+//35.Crea una función que reciba un array de números y devuelva la cantidad de números pares
+
+//36.Crea una función que reciba un array de números y devuelva la desviación estándar
+
+//37.Crea una función que reciba un array de nombres y los ordene alfabéticamente
+
+//38.Crea una función que reciba un array de números y
+//devuelva un objeto con dos arrays: uno con los números pares y otro con los impares
+
+//39.Crea una función que reciba un array y devuelva un nuevo array sin elementos duplicados
+
+//40.Crea una función que reciba un array de fechas y devuelva la fecha más reciente
