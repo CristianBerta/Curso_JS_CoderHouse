@@ -114,7 +114,7 @@ let fechas = [
     new Date('2020-01-01'),
     new Date('2024-03-05')
 ];
-console.log(fechas.sort((a, b) => a - b));
+//console.log(fechas.sort((a, b) => a - b));
 
 //27.Crea una función que reciba un array y un número,
 //y devuelva un nuevo array con los números mayores que el valor dado.
@@ -141,26 +141,130 @@ let nuevaFecha = agregarDias('2024-06-01', 7);
 console.log(nuevaFecha);
 
 //30.Crea una función que reciba un array y devuelva un nuevo array con los números duplicados
-
+function obtenerDuplicados (array){
+    let numerosDuplicados = array.map((elemento) => elemento * 2);
+    return numerosDuplicados;
+}
+console.log(obtenerDuplicados(numeros));
 
 //31.Crea una función que reciba un array de fechas y
 //devuelva un nuevo array con las fechas en formato legible (ej. 'dd/mm/yyyy')
+function formatearFechas(arrayFechas) {
+    return arrayFechas.map(fecha => {
+        let dia = fecha.getDate();
+        let mes = fecha.getMonth() + 1; // Los meses en JavaScript son de 0 a 11
+        let anio = fecha.getFullYear();
+
+        return dia + "/" + mes + "/" + anio;
+    });
+}
+console.log(formatearFechas(fechas));
 
 //32.Crea una función que reciba una fecha de nacimiento y devuelva la edad
+function calcularEdad(fechaNacimiento) {
+    let hoy = new Date();
+    let nacimiento = new Date(fechaNacimiento);
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+    let mes = hoy.getMonth() - nacimiento.getMonth();
+    // Ajustar la edad si el mes y el día de hoy son anteriores al mes y día de nacimiento
+    if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
+        edad--;
+    }
+    return edad;
+}
+console.log("Tu edad es de: " + calcularEdad('1988-05-25'));
 
 //33.Crea una función que reciba un array de arrays de números y devuelva la suma de todos los elementos
+function sumaElementos (array) {
+    let sumados = array.reduce((acumulador, elemento) => acumulador + elemento, 0);
+    return sumados
+}
+console.log("La suma de todos los elementos es de: " + sumaElementos(numeros));
 
 //34.Crea una función que reciba un array de números y devuelva un objeto con el mayor y el menor número
+function obtenerMayorYMenor(arrayNumeros) {
+    let mayor = arrayNumeros[0];
+    let menor = arrayNumeros[0];
+    arrayNumeros.forEach(numero => {
+        if (numero > mayor) {
+            mayor = numero;
+        }
+        if (numero < menor) {
+            menor = numero;
+        }
+    });
+    return {menor, mayor};
+}
+console.log(obtenerMayorYMenor(numeros));
 
 //35.Crea una función que reciba un array de números y devuelva la cantidad de números pares
+function cantPares (array) {
+    let numPares = array.filter((elemento) => elemento%2 === 0);
+    return numPares.length;
+}
+console.log("La cantidad de numeros pares son: " + cantPares(numeros));
 
 //36.Crea una función que reciba un array de números y devuelva la desviación estándar
+function calcularDesviacionEstandar(arrayNumeros) {
+    if (arrayNumeros.length === 0) {
+        return null; // Manejo de caso cuando el array está vacío
+    }
+
+    // Calcular la media
+    let suma = arrayNumeros.reduce((acc, num) => acc + num, 0);
+    let media = suma / arrayNumeros.length;
+
+    // Calcular la suma de los cuadrados de las diferencias con la media
+    let sumaDiferenciasCuadradas = arrayNumeros.reduce((acc, num) => {
+        let diferencia = num - media;
+        return acc + (diferencia * diferencia);
+    }, 0);
+
+    // Calcular la varianza
+    let varianza = sumaDiferenciasCuadradas / arrayNumeros.length;
+
+    // Calcular la desviación estándar
+    let desviacionEstandar = Math.sqrt(varianza);
+
+    return desviacionEstandar;
+}
+let desviacion = calcularDesviacionEstandar(numeros);
+
+// Mostrar la desviación estándar en la consola
+console.log(`La desviación estándar es: ${desviacion}`); // Imprime la desviación estándar calculada
 
 //37.Crea una función que reciba un array de nombres y los ordene alfabéticamente
+function ordenarNombres(array) {
+    array.sort();
+    return array
+}
+let nombres = ["mirna", "cristian", "ana", "yuli"];
+console.log(ordenarNombres(nombres));
 
 //38.Crea una función que reciba un array de números y
 //devuelva un objeto con dos arrays: uno con los números pares y otro con los impares
+function obtenerParesImpares(array) {
+    let numPares = array.filter((elemento) => elemento%2 === 0);
+    let numImpares = array.filter((elemento) => elemento%2 != 0);
+    let conjunto = [numPares, numImpares];
+    return conjunto
+}
+console.log(obtenerParesImpares(numeros));
 
 //39.Crea una función que reciba un array y devuelva un nuevo array sin elementos duplicados
+function sinDuplicados(array) {
+    let setSinDuplicados = new Set(array);
+    let sinDuplicados = Array.from(setSinDuplicados);
+    return sinDuplicados
+}
+console.log(sinDuplicados([1, 1, 2, 2, 3, 3, 4, 4]));
 
 //40.Crea una función que reciba un array de fechas y devuelva la fecha más reciente
+function fechaMasReciente(arrayFechas) {
+    let fechaReciente = arrayFechas.reduce((max, fecha) => {
+        return new Date(fecha) > new Date(max) ? fecha : max;
+    });
+    return fechaReciente;
+}
+let fechaReciente = fechaMasReciente(fechas);
+console.log("La fecha más reciente es: " + fechaReciente);
