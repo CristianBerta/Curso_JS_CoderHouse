@@ -1,68 +1,48 @@
-const mainBody = document.querySelector('#main');
-const boton = document.createElement('button');
-boton.textContent = 'Click';
-boton.type = 'button';
-mainBody.appendChild(boton);
-boton.style.backgroundColor = 'yellow';
-boton.style.padding = '1rem';
-boton.style.width = '6rem';
-boton.style.margin = '2rem';
-boton.style.fontSize = '1.2rem';
+// js/index.js
+document.addEventListener('DOMContentLoaded', () => {
+    const images = [
+        'img/img1.jpg',
+        'img/img2.jpg',
+        'img/img3.jpg',
+        'img/img4.jpg',
+        'img/img5.jpg',
+        'img/img6.jpg',
+        'img/img7.jpg'
+        // Agrega más rutas de imágenes según sea necesario
+    ];
 
-// Asignar Evento
+    const slideContainer = document.querySelector('.slide');
+    images.forEach((image, index) => {
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+        img.src = image;
+        if (index === 0) li.classList.add('active');
+        li.appendChild(img);
+        slideContainer.appendChild(li);
+    });
 
-// boton.addEventListener('click', respuestaAlClick);
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide li');
 
-// function respuestaAlClick() {
-//     boton.style.backgroundColor = 'blue';
-//     boton.style.color = 'white';
-// }
+    function showImage(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
 
-// boton.addEventListener('click', () => {
-//     // boton.style.backgroundColor = 'blue';
-//     // boton.style.color = 'white';
-//     alert("Boton apretado.!!");
-// })
+    function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+            currentIndex = slides.length - 1;
+        } else if (currentIndex >= slides.length) {
+            currentIndex = 0;
+        }
+        showImage(currentIndex);
+    }
 
-// boton.onclick = () => {alert("Boton apretado por Opcion 2.!!")};
-boton.onclick = () => {
-    cuerpo.classList.add('black');
-    alert("Boton apretado.!!");
-};
-
-
-//CODIGO JS
-let input1  = document.getElementById("nombre");
-let input2  = document.getElementById("edad");
-// input1.onchange = () => {console.log(input1.value)};
-// input2.onchange = () => {console.log(input2.value)};
-
-
-
-//CODIGO JS
-input1.addEventListener('input', () => {
-    console.log(input1.value)
-})
-
-let inicioH1 = document.getElementById('inicioH1');
-console.log(inicioH1.innerText)
-
-inicioH1.addEventListener('mouseover', () => {
-    inicioH1.style.color = 'blue';
-})
-
-inicioH1.addEventListener('mouseout', () => {
-    inicioH1.style.color = 'black';
-})
-
-
-
-boton.addEventListener('mouseover', () => {
-    boton.style.color = 'yellow';
-    boton.style.backgroundColor = 'blue';
-})
-
-boton.addEventListener('mouseout', () => {
-    boton.style.color = 'blue';
-    boton.style.backgroundColor = 'yellow';
-})
+    document.querySelector('.icon-prev').addEventListener('click', () => changeImage(-1));
+    document.querySelector('.icon-next').addEventListener('click', () => changeImage(1));
+    
+    // Mostrar la primera imagen
+    showImage(currentIndex);
+});
