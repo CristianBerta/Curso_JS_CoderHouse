@@ -140,12 +140,73 @@
     <input type="text" id="nuevaTarea">
     <button id="agregar">Agregar Tarea</button>
     <ul id="listaTareas"></ul> -->
-    <!-- 2 -->
-    <h1>Registro de Estudiantes</h1>
-    <input type="text" id="inputNombre">
-    <input type="text" id="inputEdad">
-    <input type="text" id="inputCurso">
     
+    <!-- 2 -->
+    <!-- <h1>Registro de Estudiantes</h1>
+    <form id="formulario">
+        <input type="hidden" id="indice">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="number" id="edad" placeholder="Edad" required>
+        <input type="text" id="curso" placeholder="Curso" required>
+        <button type="submit" id="guardarBoton">Guardar</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Curso</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="listaEstudiantes">
+        </tbody>
+    </table> -->
+    
+    <!-- 3 -->
+    <!-- <h1>Carrito de Compras</h1>
+    <form id="formulario">
+        <input type="text" id="producto" placeholder="Producto" required>
+        <input type="number" id="cantidad" placeholder="Cantidad" required>
+        <button type="submit">Agregar al Carrito</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="listaCarrito">
+        </tbody>
+    </table> -->
+
+    <!-- 4 -->
+    <h1>Encuesta de Satisfacción</h1>
+    <form id="encuestaForm">
+        <div class="pregunta">
+            <p>1. ¿Cómo calificarías nuestro servicio?</p>
+            <input type="radio" name="pregunta1" value="Excelente" required> Excelente<br>
+            <input type="radio" name="pregunta1" value="Bueno"> Bueno<br>
+            <input type="radio" name="pregunta1" value="Regular"> Regular<br>
+            <input type="radio" name="pregunta1" value="Malo"> Malo
+        </div>
+        <div class="pregunta">
+            <p>2. ¿Cómo calificarías la calidad de nuestros productos?</p>
+            <input type="radio" name="pregunta2" value="Excelente" required> Excelente<br>
+            <input type="radio" name="pregunta2" value="Bueno"> Bueno<br>
+            <input type="radio" name="pregunta2" value="Regular"> Regular<br>
+            <input type="radio" name="pregunta2" value="Malo"> Malo
+        </div>
+        <div class="pregunta">
+            <p>3. ¿Recomendarías nuestros productos a otros?</p>
+            <input type="radio" name="pregunta3" value="Sí" required> Sí<br>
+            <input type="radio" name="pregunta3" value="No"> No
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+    <div class="resumen" id="resumenRespuestas"></div>
 
     <script src="js/ejercicios11.js"></script>
 </body>

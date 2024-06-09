@@ -328,3 +328,183 @@
 // mostrarTareas();
 
 //2
+//Elementos del DOM
+// const formulario = document.getElementById('formulario');
+// const indiceInput = document.getElementById('indice');
+// const nombreInput = document.getElementById('nombre');
+// const edadInput = document.getElementById('edad');
+// const cursoInput = document.getElementById('curso');
+// const listaEstudiantes = document.getElementById('listaEstudiantes');
+// const guardarBoton = document.getElementById('guardarBoton');
+
+// //Funciones
+// function guardarEstudiantes(estudiantes) {
+//     localStorage.setItem('estudiantes', JSON.stringify(estudiantes));
+// }
+// function obtenerEstudiantes() {
+//     const estudiantes = localStorage.getItem('estudiantes');
+//     return estudiantes ? JSON.parse(estudiantes) : [];
+// }
+// function mostrarEstudiantes() {
+//     const estudiantes = obtenerEstudiantes();
+//     listaEstudiantes.innerHTML = '';
+//     estudiantes.forEach((estudiante, index) => {
+//         const fila = document.createElement('tr');
+//         fila.innerHTML = `
+//             <td>${estudiante.nombre}</td>
+//             <td>${estudiante.edad}</td>
+//             <td>${estudiante.curso}</td>
+//             <td>
+//                 <button onclick="editarEstudiante(${index})">Editar</button>
+//                 <button onclick="eliminarEstudiante(${index})">Eliminar</button>
+//             </td>
+//         `;
+//         listaEstudiantes.appendChild(fila);
+//     });
+// }
+
+// formulario.addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     const estudiantes = obtenerEstudiantes();
+//     const nombre = nombreInput.value;
+//     const edad = edadInput.value;
+//     const curso = cursoInput.value;
+//     const indice = indiceInput.value;
+
+//     if (indice === '') {
+//         // Agregar nuevo estudiante
+//         estudiantes.push({ nombre, edad, curso });
+//     } else {
+//         // Editar estudiante existente
+//         estudiantes[indice] = { nombre, edad, curso };
+//     }
+
+//     guardarEstudiantes(estudiantes);
+//     mostrarEstudiantes();
+//     formulario.reset();
+//     indiceInput.value = '';
+// });
+
+// window.editarEstudiante = function(index) {
+//     const estudiantes = obtenerEstudiantes();
+//     const estudiante = estudiantes[index];
+//     nombreInput.value = estudiante.nombre;
+//     edadInput.value = estudiante.edad;
+//     cursoInput.value = estudiante.curso;
+//     indiceInput.value = index;
+//     guardarBoton.textContent = 'Actualizar';
+// };
+
+// window.eliminarEstudiante = function(index) {
+//     const estudiantes = obtenerEstudiantes();
+//     estudiantes.splice(index, 1);
+//     guardarEstudiantes(estudiantes);
+//     mostrarEstudiantes();
+// };
+
+// mostrarEstudiantes();
+
+//3
+//Elementos del DOM
+// const formulario = document.getElementById('formulario');
+// const productoInput = document.getElementById('producto');
+// const cantidadInput = document.getElementById('cantidad');
+// const listaCarrito = document.getElementById('listaCarrito');
+// //Funciones
+// function guardarCarrito(carrito) {
+//     localStorage.setItem('carrito', JSON.stringify(carrito));
+// }
+// function obtenerCarrito() {
+//     const carrito = localStorage.getItem('carrito');
+//     return carrito ? JSON.parse(carrito) : [];
+// }
+// function mostrarCarrito() {
+//     const carrito = obtenerCarrito();
+//     listaCarrito.innerHTML = '';
+//     carrito.forEach((producto, index) => {
+//         const fila = document.createElement('tr');
+//         fila.innerHTML = `
+//             <td>${producto.nombre}</td>
+//             <td>${producto.cantidad}</td>
+//             <td>
+//                 <button onclick="eliminarProducto(${index})">Eliminar</button>
+//             </td>
+//         `;
+//         listaCarrito.appendChild(fila);
+//     });
+// }
+
+// formulario.addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     const carrito = obtenerCarrito();
+//     const nombre = productoInput.value;
+//     const cantidad = parseInt(cantidadInput.value);
+//     // Verificar si el producto ya existe
+//     const productoExistente = carrito.find(producto => producto.nombre === nombre);
+//     if (productoExistente) {
+//         // Actualizar la cantidad del producto existente
+//         productoExistente.cantidad += cantidad;
+//     } else {
+//         // Agregar un nuevo producto al carrito
+//         carrito.push({ nombre, cantidad });
+//     }
+//     guardarCarrito(carrito);
+//     mostrarCarrito();
+//     formulario.reset();
+// });
+// window.eliminarProducto = function(index) {
+//     const carrito = obtenerCarrito();
+//     carrito.splice(index, 1);
+//     guardarCarrito(carrito);
+//     mostrarCarrito();
+// }
+// mostrarCarrito();
+
+//4
+// Seleccionar elementos del DOM
+const encuestaForm = document.getElementById('encuestaForm');
+const resumenRespuestas = document.getElementById('resumenRespuestas');
+
+// Función para guardar las respuestas en el Session Storage
+function guardarRespuestas(respuestas) {
+    sessionStorage.setItem('respuestasEncuesta', JSON.stringify(respuestas));
+}
+
+// Función para obtener las respuestas del Session Storage
+function obtenerRespuestas() {
+    const respuestas = sessionStorage.getItem('respuestasEncuesta');
+    return respuestas ? JSON.parse(respuestas) : null;
+}
+
+// Función para mostrar el resumen de respuestas
+function mostrarResumen() {
+    const respuestas = obtenerRespuestas();
+    if (respuestas) {
+        resumenRespuestas.innerHTML = `
+            <h2>Resumen de Respuestas</h2>
+            <p><strong>1. ¿Cómo calificarías nuestro servicio?</strong> ${respuestas.pregunta1}</p>
+            <p><strong>2. ¿Cómo calificarías la calidad de nuestros productos?</strong> ${respuestas.pregunta2}</p>
+            <p><strong>3. ¿Recomendarías nuestros productos a otros?</strong> ${respuestas.pregunta3}</p>
+        `;
+    } else {
+        resumenRespuestas.innerHTML = '';
+    }
+}
+
+// Función para manejar el envío del formulario
+encuestaForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const respuestas = {
+        pregunta1: document.querySelector('input[name="pregunta1"]:checked').value,
+        pregunta2: document.querySelector('input[name="pregunta2"]:checked').value,
+        pregunta3: document.querySelector('input[name="pregunta3"]:checked').value
+    };
+
+    guardarRespuestas(respuestas);
+    mostrarResumen();
+    encuestaForm.reset();
+});
+
+// Mostrar el resumen de respuestas al cargar la página
+mostrarResumen();
