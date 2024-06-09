@@ -264,65 +264,67 @@
 //EJERCICIOS INTEGRADOS
 //1
 //Elementos del DOM
-const agregar = document.getElementById('agregar');
-const tareaNueva = document.getElementById('nuevaTarea');
-const listaTareas = document.getElementById('listaTareas');
-//Funciones
-function guardarTareas(tareas) {
-    localStorage.setItem('tareas', JSON.stringify(tareas));
-}
-function obtenerTareas() {
-    const tareas = localStorage.getItem('tareas');
-    return tareas ? JSON.parse(tareas) : [];
-}
-function agregarTarea(tarea) {
-    const tareas = obtenerTareas();
-    tareas.push({ texto: tarea, completada: false });
-    guardarTareas(tareas);
-    mostrarTareas();
-}
-function eliminarTarea(index) {
-    const tareas = obtenerTareas();
-    tareas.splice(index, 1);
-    guardarTareas(tareas);
-    mostrarTareas();
-}
-function marcarCompletada(index) {
-    const tareas = obtenerTareas();
-    tareas[index].completada = !tareas[index].completada;
-    guardarTareas(tareas);
-    mostrarTareas();
-}
-function mostrarTareas() {
-    const tareas = obtenerTareas();
-    listaTareas.innerHTML = '';
-    tareas.forEach((tarea, index) => {
-        const li = document.createElement('li');
-        li.textContent = tarea.texto;
-        li.classList.toggle('completada', tarea.completada);
-        const completada = document.createElement('button');
-        completada.textContent = 'Completada';
-        completada.addEventListener('click', () => marcarCompletada(index));
+// const agregar = document.getElementById('agregar');
+// const tareaNueva = document.getElementById('nuevaTarea');
+// const listaTareas = document.getElementById('listaTareas');
+// //Funciones
+// function guardarTareas(tareas) {
+//     localStorage.setItem('tareas', JSON.stringify(tareas));
+// }
+// function obtenerTareas() {
+//     const tareas = localStorage.getItem('tareas');
+//     return tareas ? JSON.parse(tareas) : [];
+// }
+// function agregarTarea(tarea) {
+//     const tareas = obtenerTareas();
+//     tareas.push({ texto: tarea, completada: false });
+//     guardarTareas(tareas);
+//     mostrarTareas();
+// }
+// function eliminarTarea(index) {
+//     const tareas = obtenerTareas();
+//     tareas.splice(index, 1);
+//     guardarTareas(tareas);
+//     mostrarTareas();
+// }
+// function marcarCompletada(index) {
+//     const tareas = obtenerTareas();
+//     tareas[index].completada = !tareas[index].completada;
+//     guardarTareas(tareas);
+//     mostrarTareas();
+// }
+// function mostrarTareas() {
+//     const tareas = obtenerTareas();
+//     listaTareas.innerHTML = '';
+//     tareas.forEach((tarea, index) => {
+//         const li = document.createElement('li');
+//         li.textContent = tarea.texto;
+//         li.classList.toggle('completada', tarea.completada);
+//         const completada = document.createElement('button');
+//         completada.textContent = 'Completada';
+//         completada.addEventListener('click', () => marcarCompletada(index));
 
-        const eliminarBtn = document.createElement('button');
-        eliminarBtn.textContent = 'Eliminar';
-        eliminarBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            eliminarTarea(index);
-        });
+//         const eliminarBtn = document.createElement('button');
+//         eliminarBtn.textContent = 'Eliminar';
+//         eliminarBtn.addEventListener('click', (e) => {
+//             e.stopPropagation();
+//             eliminarTarea(index);
+//         });
 
-        li.appendChild(completada);
-        li.appendChild(eliminarBtn);
-        listaTareas.appendChild(li);
-    });
-}
-//Configuracion del boton Agregar
-agregar.addEventListener('click', () => {
-    const nuevaTarea = tareaNueva.value.trim();
-    if (nuevaTarea) {
-        agregarTarea(nuevaTarea);
-        tareaNueva.value = '';
-    }
-});
-// Mostrar las tareas al cargar la página
-mostrarTareas();
+//         li.appendChild(completada);
+//         li.appendChild(eliminarBtn);
+//         listaTareas.appendChild(li);
+//     });
+// }
+// //Configuracion del boton Agregar
+// agregar.addEventListener('click', () => {
+//     const nuevaTarea = tareaNueva.value.trim();
+//     if (nuevaTarea) {
+//         agregarTarea(nuevaTarea);
+//         tareaNueva.value = '';
+//     }
+// });
+// // Mostrar las tareas al cargar la página
+// mostrarTareas();
+
+//2
