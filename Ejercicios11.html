@@ -183,30 +183,52 @@
     </table> -->
 
     <!-- 4 -->
-    <h1>Encuesta de Satisfacción</h1>
-    <form id="encuestaForm">
+    <!-- <h1>Encuesta de Satisfacción</h1>
+    <form id="encuesta">
         <div class="pregunta">
-            <p>1. ¿Cómo calificarías nuestro servicio?</p>
-            <input type="radio" name="pregunta1" value="Excelente" required> Excelente<br>
-            <input type="radio" name="pregunta1" value="Bueno"> Bueno<br>
-            <input type="radio" name="pregunta1" value="Regular"> Regular<br>
+            <p>1. ¿Cómo calificarías mi servicio?</p>
+            <input type="radio" name="pregunta1" value="Excelente" required> Excelente
+            <input type="radio" name="pregunta1" value="Bueno"> Bueno
+            <input type="radio" name="pregunta1" value="Regular"> Regular
             <input type="radio" name="pregunta1" value="Malo"> Malo
         </div>
         <div class="pregunta">
-            <p>2. ¿Cómo calificarías la calidad de nuestros productos?</p>
-            <input type="radio" name="pregunta2" value="Excelente" required> Excelente<br>
-            <input type="radio" name="pregunta2" value="Bueno"> Bueno<br>
-            <input type="radio" name="pregunta2" value="Regular"> Regular<br>
+            <p>2. ¿Cómo calificarías la calidad de mis productos?</p>
+            <input type="radio" name="pregunta2" value="Excelente" required> Excelente
+            <input type="radio" name="pregunta2" value="Bueno"> Bueno
+            <input type="radio" name="pregunta2" value="Regular"> Regular
             <input type="radio" name="pregunta2" value="Malo"> Malo
         </div>
         <div class="pregunta">
-            <p>3. ¿Recomendarías nuestros productos a otros?</p>
-            <input type="radio" name="pregunta3" value="Sí" required> Sí<br>
+            <p>3. ¿Recomendarías mis servicios y productos a otros?</p>
+            <input type="radio" name="pregunta3" value="Sí" required> Sí
             <input type="radio" name="pregunta3" value="No"> No
         </div>
         <button type="submit">Enviar</button>
     </form>
-    <div class="resumen" id="resumenRespuestas"></div>
+    <div class="resumen" id="respuestas"></div> -->
+
+    <!-- 5 -->
+    <h1>Registro de Notas</h1>
+    <form id="formulario">
+        <input type="hidden" id="indice">
+        <input type="text" id="nombre" placeholder="Nombre del Estudiante" required>
+        <input type="text" id="materia" placeholder="Materia" required>
+        <input type="number" id="nota" placeholder="Nota" required>
+        <button type="submit" id="guardarBoton">Guardar</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre del Estudiante</th>
+                <th>Materia</th>
+                <th>Nota</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="listaEstudiantes">
+        </tbody>
+    </table>
 
     <script src="js/ejercicios11.js"></script>
 </body>

@@ -461,50 +461,119 @@
 // mostrarCarrito();
 
 //4
-// Seleccionar elementos del DOM
-const encuestaForm = document.getElementById('encuestaForm');
-const resumenRespuestas = document.getElementById('resumenRespuestas');
+//Elementos del DOM
+// const encuesta = document.getElementById('encuesta');
+// const respuestasDiv = document.getElementById('respuestas');
 
-// Función para guardar las respuestas en el Session Storage
-function guardarRespuestas(respuestas) {
-    sessionStorage.setItem('respuestasEncuesta', JSON.stringify(respuestas));
+// //Funciones
+// function guardarRespuestas(respuestas) {
+//     sessionStorage.setItem('respuestas', JSON.stringify(respuestas));
+// }
+// function obtenerRespuestas() {
+//     const respuestas = sessionStorage.getItem('respuestas');
+//     return respuestas ? JSON.parse(respuestas) : null;
+// }
+// function mostrarResumen() {
+//     const respuestas = obtenerRespuestas();
+//     if (respuestas) {
+//         respuestasDiv.innerHTML = `
+//             <h2>Respuestas</h2>
+//             <p><strong>1. ¿Cómo calificarías mi servicio?</strong> ${respuestas.pregunta1}</p>
+//             <p><strong>2. ¿Cómo calificarías la calidad de mis productos?</strong> ${respuestas.pregunta2}</p>
+//             <p><strong>3. ¿Recomendarías mis servicios y productos a otros?</strong> ${respuestas.pregunta3}</p>
+//         `;
+//     } else {
+//         respuestasDiv.innerHTML = '';
+//     }
+// }
+
+// encuesta.addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     const respuestas = {
+//         pregunta1: document.querySelector('input[name="pregunta1"]:checked').value,
+//         pregunta2: document.querySelector('input[name="pregunta2"]:checked').value,
+//         pregunta3: document.querySelector('input[name="pregunta3"]:checked').value
+//     };
+//     guardarRespuestas(respuestas);
+//     mostrarResumen();
+//     encuesta.reset();
+// });
+
+// mostrarResumen();
+
+//5
+//Elementos del DOM
+const formulario = document.getElementById('formulario');
+const indiceInput = document.getElementById('indice');
+const nombreInput = document.getElementById('nombre');
+const materiaInput = document.getElementById('materia');
+const notaInput = document.getElementById('nota');
+const listaEstudiantes = document.getElementById('listaEstudiantes');
+const guardarBoton = document.getElementById('guardarBoton');
+
+//Funciones
+function guardarEstudiantes(estudiantes) {
+    localStorage.setItem('estudiantes', JSON.stringify(estudiantes));
 }
-
-// Función para obtener las respuestas del Session Storage
-function obtenerRespuestas() {
-    const respuestas = sessionStorage.getItem('respuestasEncuesta');
-    return respuestas ? JSON.parse(respuestas) : null;
+function obtenerEstudiantes() {
+    const estudiantes = localStorage.getItem('estudiantes');
+    return estudiantes ? JSON.parse(estudiantes) : [];
 }
-
-// Función para mostrar el resumen de respuestas
-function mostrarResumen() {
-    const respuestas = obtenerRespuestas();
-    if (respuestas) {
-        resumenRespuestas.innerHTML = `
-            <h2>Resumen de Respuestas</h2>
-            <p><strong>1. ¿Cómo calificarías nuestro servicio?</strong> ${respuestas.pregunta1}</p>
-            <p><strong>2. ¿Cómo calificarías la calidad de nuestros productos?</strong> ${respuestas.pregunta2}</p>
-            <p><strong>3. ¿Recomendarías nuestros productos a otros?</strong> ${respuestas.pregunta3}</p>
+function mostrarEstudiantes() {
+    const estudiantes = obtenerEstudiantes();
+    listaEstudiantes.innerHTML = '';
+    estudiantes.forEach((estudiante, index) => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${estudiante.nombre}</td>
+            <td>${estudiante.materia}</td>
+            <td>${estudiante.nota}</td>
+            <td>
+                <button onclick="editarEstudiante(${index})">Editar</button>
+                <button onclick="eliminarEstudiante(${index})">Eliminar</button>
+            </td>
         `;
-    } else {
-        resumenRespuestas.innerHTML = '';
-    }
+        listaEstudiantes.appendChild(fila);
+    });
 }
 
-// Función para manejar el envío del formulario
-encuestaForm.addEventListener('submit', function(event) {
+formulario.addEventListener('submit', function(event) {
     event.preventDefault();
+    const estudiantes = obtenerEstudiantes();
+    const nombre = nombreInput.value;
+    const materia = materiaInput.value;
+    const nota = notaInput.value;
+    const indice = indiceInput.value;
 
-    const respuestas = {
-        pregunta1: document.querySelector('input[name="pregunta1"]:checked').value,
-        pregunta2: document.querySelector('input[name="pregunta2"]:checked').value,
-        pregunta3: document.querySelector('input[name="pregunta3"]:checked').value
-    };
+    if (indice === '') {
+        // Agregar nuevo estudiante
+        estudiantes.push({ nombre, materia, nota });
+    } else {
+        // Editar estudiante existente
+        estudiantes[indice] = { nombre, materia, nota };
+    }
 
-    guardarRespuestas(respuestas);
-    mostrarResumen();
-    encuestaForm.reset();
+    guardarEstudiantes(estudiantes);
+    mostrarEstudiantes();
+    formulario.reset();
+    indiceInput.value = '';
 });
 
-// Mostrar el resumen de respuestas al cargar la página
-mostrarResumen();
+window.editarEstudiante = function(index) {
+    const estudiantes = obtenerEstudiantes();
+    const estudiante = estudiantes[index];
+    nombreInput.value = estudiante.nombre;
+    materiaInput.value = estudiante.materia;
+    notaInput.value = estudiante.nota;
+    indiceInput.value = index;
+    guardarBoton.textContent = 'Actualizar';
+};
+
+window.eliminarEstudiante = function(index) {
+    const estudiantes = obtenerEstudiantes();
+    estudiantes.splice(index, 1);
+    guardarEstudiantes(estudiantes);
+    mostrarEstudiantes();
+};
+
+mostrarEstudiantes();
