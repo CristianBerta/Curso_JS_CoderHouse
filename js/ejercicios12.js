@@ -174,5 +174,70 @@
 // console.log(resto);
 
 //DESESTRUCTURACION DE OBJETOS EN PARAMETROS
+//31
+// const usuario = {
+//     nombre: "cristian",
+//     edad: 36
+// }
+// function mostrarInfo({nombre, edad}) {
+//     console.log(nombre, edad)
+// }
+// mostrarInfo(usuario);
+//32
+// function saludar({ nombre = "Invitado" } = {}) {
+//     console.log(`Hola, ${nombre}!`);
+// }
+// saludar(usuario);
+//33
+// const cliente = {
+//     direccion: {
+//         ciudad: "varela"
+//     }
+// }
+// function obtenerCiudad({direccion: {ciudad}}) {
+//     console.log(ciudad)
+// }
+// obtenerCiudad(cliente);
+//34
+// let persona = {
+//     id: 1,
+//     nombre: 'Carlos',
+//     edad: 30,
+//     ocupacion: 'Ingeniero',
+//     ciudad: 'Madrid'
+// };
+// function procesarDatos({id, ...resto}) {
+//     console.log(id, resto)
+// }
+// procesarDatos(persona);
+//35
+// let producto = {
+//     nombre: "azucar",
+//     precio: 500
+// }
+// function mostrarProducto ({nombre: productName, precio: productPrice}) {
+//     console.log(productName, productPrice)
+// }
+// mostrarProducto(producto);
 
 //DESESTRUCTURACION DE ARRAYS
+//36
+// let numeros = [1,2,3,4];
+// const [a,b] = numeros;
+// console.log(a,b);
+//37
+// let colores = ["rojo"];
+// const [a,b='N/A'] = colores;
+// console.log(a,b);
+//38
+// let frutas = ["manzana","pera","anana"];
+// const [a,,b] = frutas;
+// console.log(a,b);
+//39
+// let nombres = ["cristian","martina","maia","morena"];
+// const [a,...resto] = nombres;
+// console.log(a, resto);
+//40
+let arrayAnidado = [[1,2],[3,4],[5,6]];
+const [,a]=arrayAnidado;
+console.log(a);
