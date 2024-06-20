@@ -2,7 +2,7 @@ const galleryContainer = document.querySelector('.slide');
 const prev = document.querySelector('.control.icon-prev');
 const next = document.querySelector('.control.icon-next');
 
-const imagenes = ['001', '002', '003'];
+const imagenes = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
 let currentIndex = 0;
 
 // Función para generar los elementos de la galería
@@ -10,7 +10,7 @@ function createGallery() {
     imagenes.forEach((img, index) => {
         const li = document.createElement('li');
         const image = document.createElement('img');
-        image.src = `img/${img}.webp`;
+        image.src = `img/${img}.jpg`;
         image.alt = `img ${index + 1}`;
         li.appendChild(image);
         if (index === 0) {
