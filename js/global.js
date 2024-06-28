@@ -1,4 +1,4 @@
-// Delaración de Variables
+// Delaración de Variables Globales
 const cuerpo = document.body;
 const cabecera = document.getElementById('header');
 const navegacion = document.createElement('div'); 
@@ -11,3 +11,4 @@ const ORIGEN = document.createElement('a');
 const footer = document.getElementsByTagName('footer');
 const parrafoFooter = document.createElement('p');
 const TIME = new Date().getFullYear(); // 2024
+const cards = document.getElementById('cards');
