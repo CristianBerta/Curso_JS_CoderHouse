@@ -5,13 +5,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- toastify
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> -->
+    <!-- swiper -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"> -->
+    <!-- Incluye el CSS de AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Ejercicios Clase 12</title>
+    <title>Ejercicios Clase 14</title>
+    <!-- ej16AOS -->
+    <style>
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+
+        }
+        .animated-element {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <!-- ej12
+    <style>
+        .swiper-button-next,
+        .swiper-button-prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .swiper-button-next {
+            right: 10px;
+        }
+
+        .swiper-button-prev {
+            left: 10px;
+        }
+
+        .swiper-slide img {
+            width: 1000%;
+            height: auto;
+            max-width: 80vh; /* altura max carrusel */
+            object-fit: contain; /* ajusta img al contenedor sin deformarla */
+        }
+    </style> -->
 </head>
 
 <body>
-    
+    <!-- sweetalert2 -->
+    <!-- <button id="boton">Click</button> -->
+    <!-- botones toastify -->
+    <!-- <button id="btnIzquierda">Mostrar notificación izquierda</button>
+    <button id="btnCentro">Mostrar notificación centro</button>
+    <button id="btnDerecha">Mostrar notificación derecha</button> -->
+    <!-- swiper -->
+    <!-- <div class="swiper-container"> -->
+        <!-- Contenedor adicional necesario -->
+        <!-- <div class="swiper-wrapper"> -->
+            <!-- Diapositivas -->
+            <!-- <div class="swiper-slide"><img src="img/img1.jpg" alt="Imagen 1"></div>
+            <div class="swiper-slide"><img src="img/img2.jpg" alt="Imagen 2"></div>
+            <div class="swiper-slide"><img src="img/img3.jpg" alt="Imagen 3"></div>
+        </div> -->
+        <!-- Botones de navegación -->
+        <!-- <div class="swiper-button-next">Siguiente</div>
+        <div class="swiper-button-prev">Anterior</div> -->
+        <!-- Paginación ej 11 -->
+        <!-- <div class="swiper-pagination"></div> -->
+    <!-- </div> -->
+    <!-- AOS -->
+    <div class="section" data-aos="fade-up">
+        <div class="animated-element">¡Animación al hacer scroll!</div>
+    </div>
 </body>
+
+<!-- sweetalert2 -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<!-- toastify -->
+<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> -->
+<!-- swiper -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
+<!-- Incluye el JS de AOS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // Inicializa AOS
+    AOS.init();
+</script>
 
 <script src="js/ejercicios14.js"></script>
 
