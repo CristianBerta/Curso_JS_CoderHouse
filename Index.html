@@ -1,42 +1,8 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es-AR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Ejercicio de Gallery</title>
-</head>
-
-<body>
-    <header id="header"></header>
-    <main>
-        <h1>Cristian PH</h1>
-        <section id="gallery">
-            <ul class="slide">
-            </ul>
-            <section class="botonera">
-                <button class="control icon-prev">Anterior</button>
-                <button class="control icon-next">Siguiente</button>
-            </section>
-        </section>
-    </main>
-    <footer></footer> -->
-<!-- Aca pongo los Script de JS -->
-<!-- <script src="js/navegacion.js"></script>
-    <script src="js/index.js"></script> -->
-<!-- Scripts de JS  -->
-<!-- </body>
-
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
     <meta charset="utf-8" />
-    <title>Swiper demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -47,7 +13,7 @@
 <body>
     <!-- Swiper -->
     <div class="swiper mySwiper">
-        <h1 id="titulo">Cristian</h1>
+        <h1>Cristian</h1>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <img src="img/img1.jpg" />
@@ -67,6 +33,9 @@
             <div class="swiper-slide">
                 <img src="img/img6.jpg" />
             </div>
+            <div class="swiper-slide">
+                <img src="img/img7.jpg" />
+            </div>
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -75,22 +44,8 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/index.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            loop: true,
-            effect: "flip",
-            grabCursor: true,
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
 </body>
 
 </html>
